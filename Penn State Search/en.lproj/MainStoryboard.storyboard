@@ -14,17 +14,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-pp-N1W">
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="First Name" translatesAutoresizingMaskIntoConstraints="NO" id="hGq-ws-yw6">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="N2E-6a-HgE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="VKy-pp-N1W" id="hD8-ZL-Ygw"/>
-                                        </connections>
-                                    </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penn State Directory Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-d1-IoH">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="282" id="ThW-OQ-P2f"/>
@@ -34,17 +23,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Last Name" translatesAutoresizingMaskIntoConstraints="NO" id="TgL-fc-njr">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="UX1-Y9-zXu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="VKy-pp-N1W" id="rCA-qq-ohs"/>
-                                        </connections>
-                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7N-RW-nlC">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="6pj-Bl-e6k"/>
@@ -62,35 +40,47 @@
                                             <action selector="searchPressed:" destination="2" eventType="touchUpInside" id="lSf-he-hIH"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Access ID" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8dy-Ka-8do">
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="101" id="pdL-TQ-BhS"/>
-                                            <constraint firstAttribute="height" constant="30" id="rQH-N5-PNG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2N1-iQ-GFI">
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                         <connections>
-                                            <outlet property="delegate" destination="VKy-pp-N1W" id="JtW-GT-XUY"/>
+                                            <outlet property="delegate" destination="2" id="eeo-eN-C0W"/>
                                         </connections>
-                                    </textView>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VEx-Kt-lJZ">
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="7Op-5J-qYY"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anb-GX-WGQ">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="103" id="9LW-9G-G90"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="cz8-O7-i3x"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="TgL-fc-njr" firstAttribute="trailing" secondItem="hGq-ws-yw6" secondAttribute="trailing" type="default" id="5ph-jk-kLM"/>
-                                    <constraint firstItem="hGq-ws-yw6" firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" type="default" id="8HJ-N0-xNT"/>
+                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="centerX" secondItem="v7N-RW-nlC" secondAttribute="centerX" type="default" id="6dL-67-Sjy"/>
                                     <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="414" id="8vU-he-r3y"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="97F-lw-2FA"/>
                                     <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="90" id="CiO-uk-u1n"/>
-                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="centerX" secondItem="VKy-pp-N1W" secondAttribute="centerX" type="default" id="FFC-bk-ziH"/>
-                                    <constraint firstItem="TgL-fc-njr" firstAttribute="centerX" secondItem="8dy-Ka-8do" secondAttribute="centerX" type="default" id="KU1-MZ-YWE"/>
-                                    <constraint firstItem="8dy-Ka-8do" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="360" id="Pqd-6W-pag"/>
-                                    <constraint firstItem="hGq-ws-yw6" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UHt-MA-hvW"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" constant="18" id="bzL-3c-GGa"/>
-                                    <constraint firstItem="TgL-fc-njr" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fGs-VU-nZY"/>
+                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" type="default" id="CjB-HY-zOv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" constant="18" id="Fmy-J0-Sta"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" type="default" id="GXD-Zn-Yjg"/>
+                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="356" id="Hft-jl-8yZ"/>
+                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="155" id="QIa-6F-JK2"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="89" id="RNa-nd-mkk"/>
+                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="108" id="ag3-Sq-n4b"/>
                                     <constraint firstItem="Gbg-d1-IoH" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lqQ-PA-rFl"/>
-                                    <constraint firstItem="TgL-fc-njr" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="160" id="nLQ-4v-OFn"/>
+                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tnG-Ve-LP8"/>
                                     <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="upJ-jQ-9jI"/>
-                                    <constraint firstItem="hGq-ws-yw6" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="103" id="wy3-zP-v7H"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -103,10 +93,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="accessIdField" destination="8dy-Ka-8do" id="3up-IR-RAh"/>
-                        <outlet property="firstNameField" destination="hGq-ws-yw6" id="YWy-NT-dl7"/>
-                        <outlet property="lastNameField" destination="TgL-fc-njr" id="Ecr-DH-HLt"/>
-                        <outlet property="scrollView" destination="VKy-pp-N1W" id="M7M-5S-pDB"/>
+                        <outlet property="accessIdField" destination="anb-GX-WGQ" id="dhY-a1-g3Z"/>
+                        <outlet property="firstNameField" destination="2N1-iQ-GFI" id="AgD-Pd-kYY"/>
+                        <outlet property="lastNameField" destination="VEx-Kt-lJZ" id="Mcx-Wd-Pb8"/>
+                        <outlet property="scrollView" destination="VKy-pp-N1W" id="tpw-D0-7fd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -121,9 +111,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="searchPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="accessIdField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="firstNameField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="lastNameField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="accessIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>

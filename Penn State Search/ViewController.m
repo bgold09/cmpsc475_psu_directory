@@ -9,10 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
+@property (weak, nonatomic) IBOutlet UITextField *accessIdField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITextView *firstNameField;
-@property (weak, nonatomic) IBOutlet UITextView *lastNameField;
-@property (weak, nonatomic) IBOutlet UITextView *accessIdField;
 - (IBAction)searchPressed:(UIButton *)sender;
 
 @end
@@ -33,4 +33,20 @@
 
 - (IBAction)searchPressed:(UIButton *)sender {
 }
+
+#pragma mark - Text Field Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+
 @end
