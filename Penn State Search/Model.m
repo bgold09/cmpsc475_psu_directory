@@ -61,17 +61,9 @@ static NSString *kBaseString = @"dc=psu,dc=edu";
     
     if (!resultAddress) {
         return @"No Address Available";
-    }
+    }   
     
-    NSArray *addressParts = [resultAddress componentsSeparatedByString:@"$"];
-    NSMutableString *address = [[NSMutableString alloc] init];
-    
-    for (NSString *addressPart in addressParts) {
-        [address appendFormat:@"%@\n", addressPart];
-    }
-    
-    // delete trailing newline
-    [address deleteCharactersInRange:NSMakeRange([address length] - 1, 1)];
+    NSString *address = [resultAddress stringByReplacingOccurrencesOfString:@"$" withString:@"\n"];
     return address;
 }
 
