@@ -24,6 +24,7 @@
 		C872981317FBBD3200F8F43A /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980C17FBBD3200F8F43A /* libsasl2.a */; };
 		C872981417FBBD3200F8F43A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980D17FBBD3200F8F43A /* libssl.a */; };
 		C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */; };
+		C872981817FBCF9500F8F43A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		C872980D17FBBD3200F8F43A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		C872980E17FBBD3200F8F43A /* RHLDAPSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHLDAPSearch.h; sourceTree = "<group>"; };
 		C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHLDAPSearch.m; sourceTree = "<group>"; };
+		C872981617FBCF9500F8F43A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		C872981717FBCF9500F8F43A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				C87297F417FBBD0F00F8F43A /* MainStoryboard.storyboard */,
 				C87297F717FBBD0F00F8F43A /* ViewController.h */,
 				C87297F817FBBD0F00F8F43A /* ViewController.m */,
+				C872981617FBCF9500F8F43A /* SearchViewController.h */,
+				C872981717FBCF9500F8F43A /* SearchViewController.m */,
 				C87297FF17FBBD3200F8F43A /* ldap */,
 				C87297E317FBBD0F00F8F43A /* Supporting Files */,
 			);
@@ -240,6 +245,7 @@
 				C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */,
 				C87297F917FBBD0F00F8F43A /* ViewController.m in Sources */,
 				C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */,
+				C872981817FBCF9500F8F43A /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

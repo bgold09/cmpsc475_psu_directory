@@ -7,15 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "SearchViewController.h"
 
 #define kKeyboardHeight 216
 
-@interface ViewController () <UITextFieldDelegate>
+@interface ViewController () <UITextFieldDelegate, SearchDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *accessIdField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-- (IBAction)searchPressed:(UIButton *)sender;
 
 @end
 
@@ -31,9 +31,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)searchPressed:(UIButton *)sender {
 }
 
 #pragma mark - Text Field Delegate
@@ -56,6 +53,23 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     CGPoint offset = CGPointMake(0.0, 0.0);
     [self.scrollView setContentOffset:offset animated:YES];
+}
+
+#pragma mark - Search Delegate
+
+- (void)dismissMe {
+    
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SearchViewController *searchViewController = segue.destinationViewController;
+    searchViewController.delegate = self;
+}
+
+- (IBAction)unwindSegue:(UIStoryboardSegue *)segue {
+    
 }
 
 @end
