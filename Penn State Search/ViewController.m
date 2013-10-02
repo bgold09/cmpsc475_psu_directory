@@ -37,6 +37,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.firstNameField.text = @"";
+    self.lastNameField.text = @"";
+    self.accessIdField.text = @"";
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
