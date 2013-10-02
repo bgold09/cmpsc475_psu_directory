@@ -9,6 +9,11 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextView *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextView *lastNameField;
+@property (weak, nonatomic) IBOutlet UITextView *accessIdField;
+- (IBAction)searchPressed:(UIButton *)sender;
 
 @end
 
@@ -26,4 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchPressed:(UIButton *)sender {
+}
 @end

@@ -52,6 +52,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchPressed:" destination="2" eventType="touchUpInside" id="lSf-he-hIH"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Access ID" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8dy-Ka-8do">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,6 +93,12 @@
                             <constraint firstItem="VKy-pp-N1W" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="x7X-Sb-T7j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessIdField" destination="8dy-Ka-8do" id="3up-IR-RAh"/>
+                        <outlet property="firstNameField" destination="hGq-ws-yw6" id="YWy-NT-dl7"/>
+                        <outlet property="lastNameField" destination="TgL-fc-njr" id="Ecr-DH-HLt"/>
+                        <outlet property="scrollView" destination="VKy-pp-N1W" id="M7M-5S-pDB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,6 +111,9 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="accessIdField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
