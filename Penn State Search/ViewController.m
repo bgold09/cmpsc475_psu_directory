@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *accessIdField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)searchPressed:(id)sender;
 
 @end
 
@@ -91,6 +92,19 @@
                                     nil];
     
     searchViewController.searchTerms = searchTerms;
+}
+
+- (IBAction)searchPressed:(id)sender {   
+    if ([self.lastNameField.text length] == 0 && [self.accessIdField.text length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
+                                                        message:@"You must input a last name and/or access ID for the search."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [self performSegueWithIdentifier:@"SearchSegue" sender:Nil];
+    }
 }
 
 @end
