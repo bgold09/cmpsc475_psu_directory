@@ -37,6 +37,15 @@
     
     self.model.directoryResults = results;
     self.tableView.dataSource = self;
+    
+    if ([self.model count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results"
+                                                        message:@"No results were found for your query."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)didReceiveMemoryWarning
