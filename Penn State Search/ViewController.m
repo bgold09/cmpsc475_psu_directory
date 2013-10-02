@@ -77,6 +77,14 @@
     SearchViewController *searchViewController = segue.destinationViewController;
     searchViewController.delegate = self;
     searchViewController.model = self.model;
+    
+    NSDictionary *searchTerms = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                    self.firstNameField.text, @"first-name",
+                                    self.lastNameField.text, @"last-name",
+                                    self.accessIdField.text, @"access-id",
+                                    nil];
+    
+    searchViewController.searchTerms = searchTerms;
 }
 
 - (IBAction)unwindSegue:(UIStoryboardSegue *)segue {

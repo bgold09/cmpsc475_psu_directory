@@ -28,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    NSString *firstName = [self.searchTerms objectForKey:@"first-name"];
+    NSString *lastName = [self.searchTerms objectForKey:@"last-name"];
+    NSString *accessId = [self.searchTerms objectForKey:@"access-id"];
+    
+    NSArray *results = [self.model searchForPeopleWithFirstName:firstName andLastName:lastName andAccessId:accessId];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,4 +45,5 @@
 - (IBAction)backPressed:(UIBarButtonItem *)sender {
     [self.delegate dismissMe];
 }
+
 @end

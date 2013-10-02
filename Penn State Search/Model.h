@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Model : NSObject
+- (NSArray *)searchForPeopleWithFirstName:(NSString *)firstName andLastName:(NSString *)lastName andAccessId:(NSString *)accessId;
 
 @end

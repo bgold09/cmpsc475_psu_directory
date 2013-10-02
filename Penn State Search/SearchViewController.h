@@ -17,6 +17,7 @@
 
 @interface SearchViewController : UIViewController
 @property (strong, nonatomic) Model *model;
+@property (strong, nonatomic) NSDictionary *searchTerms;
 @property (weak, nonatomic) id<SearchDelegate> delegate;
 
 @end
