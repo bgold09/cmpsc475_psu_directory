@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Model : NSObject
+@property (strong, nonatomic) NSArray *directoryResults;
 - (NSArray *)searchForPeopleWithFirstName:(NSString *)firstName andLastName:(NSString *)lastName andAccessId:(NSString *)accessId;
+- (NSInteger)count;
+- (NSString *)addressForIndex:(NSInteger)index;
+- (NSString *)displayNameForIndex:(NSInteger)index;
 
 @end

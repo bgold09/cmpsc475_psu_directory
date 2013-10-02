@@ -50,4 +50,36 @@ static NSString *kBaseString = @"dc=psu,dc=edu";
     return results;
 }
 
+- (NSInteger)count {
+    return [self.directoryResults count];
+}
+
+- (NSString *)addressForIndex:(NSInteger)index {
+    NSDictionary *result = [self.directoryResults objectAtIndex:index];
+    NSArray *addresses = [result objectForKey:@"postalAddress"];
+    NSString *resultAddress = [addresses objectAtIndex:0];
+    
+    if (!resultAddress) {
+        return @"No Address Available";
+    }
+    
+    NSArray *addressParts = [resultAddress componentsSeparatedByString:@"$"];
+    NSMutableString *address = [[NSMutableString alloc] init];
+    
+    for (NSString *addressPart in addressParts) {
+        [address appendFormat:@"%@\n", addressPart];
+    }
+    
+    // delete trailing newline
+    [address deleteCharactersInRange:NSMakeRange([address length] - 1, 1)];
+    return address;
+}
+
+- (NSString *)displayNameForIndex:(NSInteger)index {
+    NSDictionary *result = [self.directoryResults objectAtIndex:index];
+    NSArray *displayNames = [result objectForKey:@"displayName"];
+    NSString *displayName = [displayNames objectAtIndex:0];
+    return displayName;
+}
+
 @end
