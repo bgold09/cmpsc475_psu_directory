@@ -14,8 +14,6 @@
 		C87297E917FBBD0F00F8F43A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297E817FBBD0F00F8F43A /* main.m */; };
 		C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297EC17FBBD0F00F8F43A /* AppDelegate.m */; };
 		C87297EF17FBBD0F00F8F43A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C87297EE17FBBD0F00F8F43A /* Default.png */; };
-		C87297F117FBBD0F00F8F43A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C87297F017FBBD0F00F8F43A /* Default@2x.png */; };
-		C87297F317FBBD0F00F8F43A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C87297F217FBBD0F00F8F43A /* Default-568h@2x.png */; };
 		C87297F617FBBD0F00F8F43A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87297F417FBBD0F00F8F43A /* MainStoryboard.storyboard */; };
 		C87297F917FBBD0F00F8F43A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297F817FBBD0F00F8F43A /* ViewController.m */; };
 		C872981017FBBD3200F8F43A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980917FBBD3200F8F43A /* libcrypto.a */; };
@@ -245,8 +243,6 @@
 			files = (
 				C87297E717FBBD0F00F8F43A /* InfoPlist.strings in Resources */,
 				C87297EF17FBBD0F00F8F43A /* Default.png in Resources */,
-				C87297F117FBBD0F00F8F43A /* Default@2x.png in Resources */,
-				C87297F317FBBD0F00F8F43A /* Default-568h@2x.png in Resources */,
 				C87297F617FBBD0F00F8F43A /* MainStoryboard.storyboard in Resources */,
 				C8EBB61E17FCDFA600D3BC0A /* Default@2x.png in Resources */,
 				C8EBB62017FCDFF800D3BC0A /* Default-568h@2x.png in Resources */,

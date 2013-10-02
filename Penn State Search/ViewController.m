@@ -97,7 +97,7 @@
 - (IBAction)searchPressed:(id)sender {   
     if ([self.lastNameField.text length] == 0 && [self.accessIdField.text length] == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
-                                                        message:@"You must input a last name and/or access ID for the search."
+                                                        message:@"You must provide a last name and/or access ID for the search."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
