@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define kKeyboardHeight 216
+
 @interface ViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
@@ -41,12 +43,19 @@
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
+- (void)textFieldDidBeginEditing:(UITextField *)textField {  
+    CGRect frame = textField.frame;    
+    if (frame.origin.y + frame.size.height >
+            self.scrollView.frame.origin.y + self.scrollView.frame.size.height - kKeyboardHeight) {
+        CGPoint offset = self.scrollView.contentOffset;
+        offset = CGPointMake(offset.x, offset.y + kKeyboardHeight);
+        [self.scrollView setContentOffset:offset animated:YES];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
+    CGPoint offset = CGPointMake(0.0, 0.0);
+    [self.scrollView setContentOffset:offset animated:YES];
 }
 
 @end
