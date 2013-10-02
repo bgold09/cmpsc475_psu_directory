@@ -7,8 +7,10 @@
 //
 
 #import "SearchViewController.h"
+#import "Model.h"
 
 @interface SearchViewController ()
+- (IBAction)backPressed:(UIBarButtonItem *)sender;
 
 @end
 
@@ -35,4 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backPressed:(UIBarButtonItem *)sender {
+    [self.delegate dismissMe];
+}
 @end

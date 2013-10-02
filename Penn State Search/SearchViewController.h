@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @protocol SearchDelegate <NSObject>
 
@@ -15,6 +16,7 @@
 @end
 
 @interface SearchViewController : UIViewController
+@property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) id<SearchDelegate> delegate;
 
 @end

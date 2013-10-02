@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import "SearchViewController.h"
+#import "Model.h"
 
 #define kKeyboardHeight 216
 
 @interface ViewController () <UITextFieldDelegate, SearchDelegate>
+@property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *accessIdField;
@@ -20,6 +22,14 @@
 @end
 
 @implementation ViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _model = [[Model alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -66,6 +76,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SearchViewController *searchViewController = segue.destinationViewController;
     searchViewController.delegate = self;
+    searchViewController.model = self.model;
 }
 
 - (IBAction)unwindSegue:(UIStoryboardSegue *)segue {

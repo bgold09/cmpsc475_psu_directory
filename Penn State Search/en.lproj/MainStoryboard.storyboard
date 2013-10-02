@@ -94,6 +94,7 @@
                                     <items>
                                         <barButtonItem title="Back" style="done" id="hSP-3G-fZz">
                                             <connections>
+                                                <action selector="backPressed:" destination="TXm-1P-KIT" id="UmC-8X-P0G"/>
                                                 <segue destination="BML-Az-0ni" kind="unwind" unwindAction="unwindSegue:" id="Aco-3D-B6d"/>
                                             </connections>
                                         </barButtonItem>
@@ -113,6 +114,9 @@
     <classes>
         <class className="SearchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backPressed:" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
         <class className="UIStoryboardSegue" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
