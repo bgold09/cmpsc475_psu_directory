@@ -68,7 +68,7 @@
 #pragma mark - Search Delegate
 
 - (void)dismissMe {
-    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Segues
@@ -85,10 +85,6 @@
                                     nil];
     
     searchViewController.searchTerms = searchTerms;
-}
-
-- (IBAction)unwindSegue:(UIStoryboardSegue *)segue {
-    
 }
 
 @end
