@@ -29,23 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSString *firstName = [self.searchTerms objectForKey:@"first-name"];
-    NSString *lastName = [self.searchTerms objectForKey:@"last-name"];
-    NSString *accessId = [self.searchTerms objectForKey:@"access-id"];
-    NSArray *results = [self.model searchForPeopleWithFirstName:firstName andLastName:lastName andAccessId:accessId];
-    
-    self.model.directoryResults = results;
     self.tableView.dataSource = self;
-    
-    if ([self.model count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results"
-                                                        message:@"No results were found for your query."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
 }
 
 - (void)didReceiveMemoryWarning

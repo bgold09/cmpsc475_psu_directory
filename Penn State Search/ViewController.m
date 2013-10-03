@@ -66,7 +66,7 @@
     frame.size.height -= kKeyboardHeight;
     if (!CGRectContainsPoint(frame, textField.frame.origin)) {
         CGPoint offset = self.scrollView.contentOffset;
-        offset = CGPointMake(0.0,  kKeyboardHeight);
+        offset = CGPointMake(0.0, kKeyboardHeight);
         [self.scrollView setContentOffset:offset animated:YES];
     }
 }
@@ -93,14 +93,6 @@
     SearchViewController *searchViewController = segue.destinationViewController;
     searchViewController.delegate = self;
     searchViewController.model = self.model;
-    
-    NSDictionary *searchTerms = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    self.firstNameField.text, @"first-name",
-                                    self.lastNameField.text, @"last-name",
-                                    self.accessIdField.text, @"access-id",
-                                    nil];
-    
-    searchViewController.searchTerms = searchTerms;
 }
 
 - (IBAction)searchPressed:(id)sender {   
@@ -112,8 +104,24 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        [self performSegueWithIdentifier:@"SearchSegue" sender:Nil];
+        NSArray *results = [self.model searchForPeopleWithFirstName:self.firstNameField.text
+                                                        andLastName:self.lastNameField.text
+                                                        andAccessId:self.accessIdField.text];
+        
+        self.model.directoryResults = results;
+        
+        if ([self.model count] == 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results"
+                                                            message:@"No results were found for your query."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        } else {
+            [self performSegueWithIdentifier:@"SearchSegue" sender:Nil];
+        }
     }
+    
 }
 
 @end
