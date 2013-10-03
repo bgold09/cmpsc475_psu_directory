@@ -103,7 +103,9 @@
     searchViewController.model = self.model;
 }
 
-- (IBAction)searchPressed:(id)sender {   
+- (IBAction)searchPressed:(id)sender {
+    [self.view endEditing:YES];
+    
     if ([self.lastNameField.text length] == 0 && [self.accessIdField.text length] == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
                                                         message:@"You must provide a last name and/or access ID for the search."
@@ -129,7 +131,6 @@
             [self performSegueWithIdentifier:@"SearchSegue" sender:Nil];
         }
     }
-    
 }
 
 @end
