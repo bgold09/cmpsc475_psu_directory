@@ -57,19 +57,28 @@
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {  
-    CGRect frame = textField.frame;    
-    if (frame.origin.y + frame.size.height >
-            self.scrollView.frame.origin.y + self.scrollView.frame.size.height - kKeyboardHeight) {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kKeyboardHeight, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    CGRect frame = self.view.frame;
+    frame.size.height -= kKeyboardHeight;
+    if (!CGRectContainsPoint(frame, textField.frame.origin)) {
         CGPoint offset = self.scrollView.contentOffset;
-        offset = CGPointMake(offset.x, offset.y + kKeyboardHeight);
+        offset = CGPointMake(0.0,  kKeyboardHeight);
         [self.scrollView setContentOffset:offset animated:YES];
     }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    CGPoint offset = CGPointMake(0.0, 0.0);
-    [self.scrollView setContentOffset:offset animated:YES];
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.scrollView.contentInset = insets;
+    }];
+    
+    self.scrollView.scrollIndicatorInsets = insets;
 }
 
 #pragma mark - Search Delegate
