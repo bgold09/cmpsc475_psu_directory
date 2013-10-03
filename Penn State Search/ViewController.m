@@ -38,6 +38,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+//    CGSize contentSize =
+    [self.scrollView setScrollEnabled:NO];
+    [self.scrollView setContentSize:self.view.frame.size];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     self.firstNameField.text = @"";
     self.lastNameField.text = @"";
@@ -61,6 +67,7 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kKeyboardHeight, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
+    [self.scrollView setScrollEnabled:YES];
     
     CGRect frame = self.view.frame;
     frame.size.height -= kKeyboardHeight;
@@ -79,6 +86,7 @@
     }];
     
     self.scrollView.scrollIndicatorInsets = insets;
+    [self.scrollView setScrollEnabled:NO];
 }
 
 #pragma mark - Search Delegate
