@@ -39,7 +39,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    CGSize contentSize =
     [self.scrollView setScrollEnabled:NO];
     [self.scrollView setContentSize:self.view.frame.size];
 }
@@ -114,11 +113,9 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        NSArray *results = [self.model searchForPeopleWithFirstName:self.firstNameField.text
+        [self.model searchForPeopleWithFirstName:self.firstNameField.text
                                                         andLastName:self.lastNameField.text
                                                         andAccessId:self.accessIdField.text];
-        
-        self.model.directoryResults = results;
         
         if ([self.model count] == 0) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results"

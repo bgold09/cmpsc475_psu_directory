@@ -27,7 +27,7 @@ static NSString *kBaseString = @"dc=psu,dc=edu";
     return self;
 }
 
-- (NSArray *)searchForPeopleWithFirstName:(NSString *)firstName andLastName:(NSString *)lastName andAccessId:(NSString *)accessId {
+- (void)searchForPeopleWithFirstName:(NSString *)firstName andLastName:(NSString *)lastName andAccessId:(NSString *)accessId {
     NSMutableString *query = [[NSMutableString alloc] initWithString:@"(&"];
     
     if ([firstName length] > 0) {
@@ -47,7 +47,7 @@ static NSString *kBaseString = @"dc=psu,dc=edu";
     NSError *error;
     NSArray *results = [self.connection searchWithQuery:query withinBase:kBaseString usingScope:RH_LDAP_SCOPE_SUBTREE error:&error];
     
-    return results;
+    _directoryResults = results;
 }
 
 - (NSInteger)count {
