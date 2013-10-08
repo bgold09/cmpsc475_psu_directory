@@ -88,19 +88,13 @@
     [self.scrollView setScrollEnabled:YES];
 }
 
-#pragma mark - Search Delegate
+#pragma mark - Results Delegate
 
 - (void)dismissMe {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SearchViewController *searchViewController = segue.destinationViewController;
-    searchViewController.delegate = self;
-    searchViewController.model = self.model;
-}
 
 - (IBAction)searchPressed:(id)sender {
     [self.view endEditing:YES];
@@ -125,7 +119,10 @@
                                                   otherButtonTitles:nil];
             [alert show];
         } else {
-            [self performSegueWithIdentifier:@"SearchSegue" sender:Nil];
+            SearchViewController *searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
+            searchViewController.delegate = self;
+            searchViewController.model = self.model;
+            [self.navigationController pushViewController:searchViewController animated:YES];
         }
     }
 }
