@@ -7,9 +7,10 @@
 //
 
 #import "ResultDetailViewController.h"
+#import "Model.h"
 
 @interface ResultDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIToolbar *resultsToolbar;
+@property (nonatomic, strong) Model *model;
 
 @end
 
@@ -19,12 +20,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UIButton *backButton = [UIButton buttonWithType:101];
-        [backButton setTitle:@"Back" forState:UIControlStateNormal];
-        [backButton addTarget:self action:@selector(done) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-        NSArray *buttons = [NSArray arrayWithObject:backButtonItem];
-        [self.resultsToolbar setItems:buttons];
+
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {      
+        _model = [Model sharedInstance];
     }
     return self;
 }
@@ -32,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self bringUpContactView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)backPressed {
+- (void)bringUpContactView {
     
 }
 

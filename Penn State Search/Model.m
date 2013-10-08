@@ -9,15 +9,24 @@
 #import "Model.h"
 #import "RHLDAPSearch.h"
 
+static NSString * const kConnectionString = @"ldap://ldap.psu.edu:389";
+static NSString * const kBaseString = @"dc=psu,dc=edu";
+
 @interface Model ()
 @property (strong, nonatomic) RHLDAPSearch *connection;
+@property (strong, nonatomic) NSArray *directoryResults;
 
 @end
 
 @implementation Model
 
-static NSString *kConnectionString = @"ldap://ldap.psu.edu:389";
-static NSString *kBaseString = @"dc=psu,dc=edu";
++ (id)sharedInstance {
+	static id singleton = nil;
+	if (!singleton) {
+		singleton = [[self alloc] init];
+	}
+	return singleton;
+}
 
 - (id)init {
     self = [super init];
@@ -61,7 +70,7 @@ static NSString *kBaseString = @"dc=psu,dc=edu";
     
     if (!resultAddress) {
         return @"No Address Available";
-    }   
+    }
     
     NSString *address = [resultAddress stringByReplacingOccurrencesOfString:@"$" withString:@"\n"];
     return address;

@@ -10,7 +10,9 @@
 #import "ResultsViewController.h"
 #import "Model.h"
 
-#define kKeyboardHeight 216
+#define kKeyboardHeight  216.0
+#define kStatusBarHeight 20.0
+#define kNavBarHeight    44.0
 
 @interface ViewController () <UITextFieldDelegate, SearchDelegate>
 @property (strong, nonatomic) Model *model;
@@ -27,7 +29,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        _model = [[Model alloc] init];
+        _model = [Model sharedInstance];
     }
     return self;
 }
@@ -63,7 +65,7 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kKeyboardHeight, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kKeyboardHeight - kStatusBarHeight - kNavBarHeight, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     [self.scrollView setScrollEnabled:YES];
@@ -72,7 +74,7 @@
     frame.size.height -= kKeyboardHeight;
     if (!CGRectContainsPoint(frame, textField.frame.origin)) {
         CGPoint offset = self.scrollView.contentOffset;
-        offset = CGPointMake(0.0, kKeyboardHeight);
+        offset = CGPointMake(0.0, kKeyboardHeight - kStatusBarHeight - kNavBarHeight);
         [self.scrollView setContentOffset:offset animated:YES];
     }
 }
@@ -113,10 +115,9 @@
                                                   otherButtonTitles:nil];
             [alert show];
         } else {
-            ResultsViewController *searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
-            searchViewController.delegate = self;
-            searchViewController.model = self.model;
-            [self.navigationController pushViewController:searchViewController animated:YES];
+            ResultsViewController *resultsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
+            resultsViewController.delegate = self;
+            [self.navigationController pushViewController:resultsViewController animated:YES];
         }
     }
 }

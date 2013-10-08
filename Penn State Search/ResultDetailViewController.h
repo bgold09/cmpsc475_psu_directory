@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Model.h"
 
 @interface ResultDetailViewController : UIViewController
-@property (nonatomic, strong) Model *model;
+@property (assign, nonatomic) NSInteger resultNumber;
 
 @end

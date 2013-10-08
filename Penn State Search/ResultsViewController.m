@@ -7,11 +7,12 @@
 //
 
 #import "ResultsViewController.h"
-#import "Model.h"
 #import "ResultDetailViewController.h"
+#import "Model.h"
 
 @interface ResultsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) Model *model;
 
 @end
 
@@ -22,6 +23,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _model = [Model sharedInstance];
     }
     return self;
 }
@@ -37,7 +46,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)detailButtonPressed:(id)sender event:(id)event {
     NSSet *touches = [event allTouches];
@@ -76,11 +84,10 @@
 #pragma mark - Table View Delegate
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    ResultDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultDetailView"];
-    detailViewController.model = self.model;
+    ResultDetailViewController *detailViewController =
+        [self.storyboard instantiateViewControllerWithIdentifier:@"ResultDetailView"];
+    detailViewController.resultNumber = indexPath.row;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-
-
 
 @end
