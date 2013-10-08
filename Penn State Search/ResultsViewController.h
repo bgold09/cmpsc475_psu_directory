@@ -15,7 +15,7 @@
 
 @end
 
-@interface SearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) id<SearchDelegate> delegate;
 

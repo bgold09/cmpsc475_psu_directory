@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SearchViewController.h"
+#import "ResultsViewController.h"
 #import "Model.h"
 
 #define kKeyboardHeight 216
@@ -119,7 +119,7 @@
                                                   otherButtonTitles:nil];
             [alert show];
         } else {
-            SearchViewController *searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
+            ResultsViewController *searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
             searchViewController.delegate = self;
             searchViewController.model = self.model;
             [self.navigationController pushViewController:searchViewController animated:YES];

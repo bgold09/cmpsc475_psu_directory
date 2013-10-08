@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 BRIAN J GOLDEN. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "ResultsViewController.h"
 #import "Model.h"
 
-@interface SearchViewController ()
+@interface ResultsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)backPressed:(UIBarButtonItem *)sender;
 
 @end
 
-@implementation SearchViewController
+@implementation ResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
