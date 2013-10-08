@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */; };
 		C87297DD17FBBD0F00F8F43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297DC17FBBD0F00F8F43A /* UIKit.framework */; };
 		C87297DF17FBBD0F00F8F43A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297DE17FBBD0F00F8F43A /* Foundation.framework */; };
 		C87297E117FBBD0F00F8F43A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297E017FBBD0F00F8F43A /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDetailViewController.h; sourceTree = "<group>"; };
+		C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDetailViewController.m; sourceTree = "<group>"; };
 		C87297D917FBBD0F00F8F43A /* Penn State Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penn State Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87297DC17FBBD0F00F8F43A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C87297DE17FBBD0F00F8F43A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				C87297EB17FBBD0F00F8F43A /* AppDelegate.h */,
 				C87297EC17FBBD0F00F8F43A /* AppDelegate.m */,
 				C87297F417FBBD0F00F8F43A /* MainStoryboard.storyboard */,
+				C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */,
+				C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */,
 				C87297F717FBBD0F00F8F43A /* ViewController.h */,
 				C87297F817FBBD0F00F8F43A /* ViewController.m */,
 				C8EBB61817FCA3F400D3BC0A /* Model.h */,
@@ -264,6 +269,7 @@
 				C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */,
 				C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */,
 				C8EBB61A17FCA3F400D3BC0A /* Model.m in Sources */,
+				C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

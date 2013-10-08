@@ -88,12 +88,6 @@
     [self.scrollView setScrollEnabled:YES];
 }
 
-#pragma mark - Results Delegate
-
-- (void)dismissMe {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - Segues
 
 - (IBAction)searchPressed:(id)sender {

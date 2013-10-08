@@ -11,8 +11,6 @@
 
 @protocol SearchDelegate <NSObject>
 
-- (void)dismissMe;
-
 @end
 
 @interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

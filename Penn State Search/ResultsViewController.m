@@ -8,10 +8,10 @@
 
 #import "ResultsViewController.h"
 #import "Model.h"
+#import "ResultDetailViewController.h"
 
 @interface ResultsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)backPressed:(UIBarButtonItem *)sender;
 
 @end
 
@@ -38,8 +38,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)backPressed:(UIBarButtonItem *)sender {
-    [self.delegate dismissMe];
+
+- (void)detailButtonPressed:(id)sender event:(id)event {
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:currentTouchPosition];
+    
+    if (indexPath != nil) {
+        [self tableView:self.tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+    }
 }
 
 #pragma mark - Data Source
@@ -58,8 +66,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.text = [self.model displayNameForIndex:indexPath.row];
     cell.detailTextLabel.text = [self.model addressForIndex:indexPath.row];
+    UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [detailButton addTarget:self action:@selector(detailButtonPressed:event:) forControlEvents:UIControlEventTouchUpInside];
+    cell.accessoryView = detailButton;
     
     return cell;
 }
+
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    ResultDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultDetailView"];
+    detailViewController.model = self.model;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+
 
 @end
