@@ -98,7 +98,6 @@
                         <outlet property="firstNameField" destination="2N1-iQ-GFI" id="AgD-Pd-kYY"/>
                         <outlet property="lastNameField" destination="VEx-Kt-lJZ" id="Mcx-Wd-Pb8"/>
                         <outlet property="scrollView" destination="VKy-pp-N1W" id="tpw-D0-7fd"/>
-                        <segue destination="TXm-1P-KIT" kind="push" identifier="SearchSegue" id="eOS-Ru-Gdn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -110,7 +109,7 @@
             <objects>
                 <viewController storyboardIdentifier="ResultsView" id="TXm-1P-KIT" customClass="ResultsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDe-iv-R8J">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="99" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P5v-gL-hR5">
@@ -257,6 +256,13 @@
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
