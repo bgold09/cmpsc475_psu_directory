@@ -14,7 +14,7 @@
 #define kStatusBarHeight 20.0
 #define kNavBarHeight    44.0
 
-@interface ViewController () <UITextFieldDelegate, SearchDelegate>
+@interface ViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) Model *model;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
@@ -116,7 +116,6 @@
             [alert show];
         } else {
             ResultsViewController *resultsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
-            resultsViewController.delegate = self;
             [self.navigationController pushViewController:resultsViewController animated:YES];
         }
     }
