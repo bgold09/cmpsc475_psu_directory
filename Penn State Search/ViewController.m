@@ -39,7 +39,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.scrollView setScrollEnabled:NO];
+    [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:self.view.frame.size];
 }
 
@@ -85,13 +85,13 @@
     }];
     
     self.scrollView.scrollIndicatorInsets = insets;
-    [self.scrollView setScrollEnabled:NO];
+    [self.scrollView setScrollEnabled:YES];
 }
 
 #pragma mark - Search Delegate
 
 - (void)dismissMe {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Segues
