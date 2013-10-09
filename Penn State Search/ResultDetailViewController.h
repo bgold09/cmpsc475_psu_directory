@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultDetailViewController : UIViewController
+@interface ResultDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (assign, nonatomic) NSInteger resultNumber;
 
 @end

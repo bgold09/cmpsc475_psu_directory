@@ -73,7 +73,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.text = [self.model displayNameForIndex:indexPath.row];
-    cell.detailTextLabel.text = [self.model addressForIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.model postalAddressForIndex:indexPath.row];
     UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [detailButton addTarget:self action:@selector(detailButtonPressed:event:) forControlEvents:UIControlEventTouchUpInside];
     cell.accessoryView = detailButton;
