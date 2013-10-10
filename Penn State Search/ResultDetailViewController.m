@@ -62,28 +62,23 @@
     NSString *CellIndentifier;
     NSString *cellTitle;
     
-    NSInteger correctedSectionIndex = [self.model fieldNumberWithValuesForIndex:self.resultNumber andFieldNumber:indexPath.section];
-    switch (correctedSectionIndex) {
-        case 0:
-            CellIndentifier = @"TitleCell";
-            cellTitle = [self.model titleForIndex:self.resultNumber];
-            break;
-        case 1:
-            CellIndentifier = @"PrimaryAffiliationCell";
-            cellTitle = [self.model personPrimaryAffiliationForIndex:self.resultNumber];
-            break;
-        case 2:
-            CellIndentifier = @"EmailAddressCell";
-            cellTitle = [self.model mailIdForIndex:self.resultNumber andMailIdNumber:indexPath.row];
-            break;
-        case 3:
-            CellIndentifier = @"PostalAddressCell";
-            cellTitle = [self.model postalAddressForIndex:self.resultNumber];
-            break;
-        default:
-            CellIndentifier = @"TitleCell";
-            cellTitle = [self.model titleForIndex:self.resultNumber];
-            break;
+    NSString *sectionHeader = [self tableView:self.tableView titleForHeaderInSection:indexPath.section];
+    
+    if ([sectionHeader isEqualToString:@"Title"]) {
+        CellIndentifier = @"TitleCell";
+        cellTitle = [self.model titleForIndex:self.resultNumber];
+    } else if ([sectionHeader isEqualToString:@"Primary Affiliation"]) {
+        CellIndentifier = @"PrimaryAffiliationCell";
+        cellTitle = [self.model personPrimaryAffiliationForIndex:self.resultNumber];
+    } else if ([sectionHeader isEqualToString:@"Email Address"]) {
+        CellIndentifier = @"EmailAddressCell";
+        cellTitle = [self.model mailIdForIndex:self.resultNumber andMailIdNumber:indexPath.row];
+    } else if ([sectionHeader isEqualToString:@"Postal Address"]) {
+        CellIndentifier = @"PostalAddressCell";
+        cellTitle = [self.model postalAddressForIndex:self.resultNumber];
+    } else {
+        CellIndentifier = @"TitleCell";
+        cellTitle = [self.model titleForIndex:self.resultNumber];
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIndentifier];

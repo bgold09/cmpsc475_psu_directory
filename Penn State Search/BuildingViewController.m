@@ -81,7 +81,6 @@
     
     if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
         [self performSegueWithIdentifier:@"BuildingImageSegue" sender:self];
-        
     }
 }
 

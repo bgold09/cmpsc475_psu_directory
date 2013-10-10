@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search View Controller - Search-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SearchViewController" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                             <constraint firstItem="VKy-pp-N1W" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="r56-pW-sqb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VWM-eQ-Pbu"/>
+                    <navigationItem key="navigationItem" title="Search" id="VWM-eQ-Pbu"/>
                     <connections>
                         <outlet property="accessIdField" destination="anb-GX-WGQ" id="dhY-a1-g3Z"/>
                         <outlet property="firstNameField" destination="2N1-iQ-GFI" id="AgD-Pd-kYY"/>
@@ -116,7 +116,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="99" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P5v-gL-hR5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="v4F-f5-JIV" detailTextLabel="8ca-cz-NZU" rowHeight="99" style="IBUITableViewCellStyleSubtitle" id="41V-bo-ziS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="v4F-f5-JIV" detailTextLabel="8ca-cz-NZU" rowHeight="99" style="IBUITableViewCellStyleSubtitle" id="41V-bo-ziS">
                                         <rect key="frame" x="0.0" y="22" width="320" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -162,10 +162,9 @@
             </objects>
             <point key="canvasLocation" x="559" y="-833"/>
         </scene>
-        <!--Building View Controller - Building Search-->
+        <!--Building View Controller - Search-->
         <scene sceneID="uac-rp-B92">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ks8-Db-olH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FZ5-QZ-oAu" customClass="BuildingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBn-pD-kDR">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -201,12 +200,13 @@
                             <constraint firstItem="UVJ-Pq-dAP" firstAttribute="bottom" secondItem="oBn-pD-kDR" secondAttribute="bottom" type="default" id="ar9-Mk-bUb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Building Search" id="pnx-kT-VJz"/>
+                    <navigationItem key="navigationItem" title="Search" id="pnx-kT-VJz"/>
                     <connections>
                         <outlet property="tableView" destination="UVJ-Pq-dAP" id="Rnr-DL-xe9"/>
                         <segue destination="PL1-wY-f3K" kind="push" identifier="BuildingImageSegue" id="dah-Z5-3og"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ks8-Db-olH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8" y="12"/>
         </scene>
@@ -275,11 +275,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="131" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="131"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="158" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
+                                        <rect key="frame" x="0.0" y="179" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="130"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
@@ -333,7 +333,6 @@
         <!--Navigation Controller - Item-->
         <scene sceneID="X4K-lw-T2d">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sMZ-my-Jpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="5Va-ab-Uer" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rCb-yJ-1ug"/>
                     <toolbarItems/>
@@ -346,6 +345,7 @@
                         <segue destination="FZ5-QZ-oAu" kind="relationship" relationship="rootViewController" id="pW8-fb-Jn6"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMZ-my-Jpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-510" y="12"/>
         </scene>
