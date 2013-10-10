@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Model : NSObject
+@interface DirectoryModel : NSObject
 + (id)sharedInstance;
 - (void)searchForPeopleWithFirstName:(NSString *)firstName andLastName:(NSString *)lastName andAccessId:(NSString *)accessId;
 - (NSInteger)count;

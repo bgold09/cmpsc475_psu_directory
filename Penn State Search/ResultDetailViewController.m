@@ -7,10 +7,10 @@
 //
 
 #import "ResultDetailViewController.h"
-#import "Model.h"
+#import "DirectoryModel.h"
 
 @interface ResultDetailViewController ()
-@property (nonatomic, strong) Model *model;
+@property (nonatomic, strong) DirectoryModel *model;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -29,7 +29,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {      
-        _model = [Model sharedInstance];
+        _model = [DirectoryModel sharedInstance];
     }
     return self;
 }

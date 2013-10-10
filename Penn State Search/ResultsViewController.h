@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Model.h"
+#import "DirectoryModel.h"
 
 @interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

@@ -8,14 +8,14 @@
 
 #import "ViewController.h"
 #import "ResultsViewController.h"
-#import "Model.h"
+#import "DirectoryModel.h"
 
 #define kKeyboardHeight  216.0
 #define kStatusBarHeight 20.0
 #define kNavBarHeight    44.0
 
 @interface ViewController () <UITextFieldDelegate>
-@property (strong, nonatomic) Model *model;
+@property (strong, nonatomic) DirectoryModel *model;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *accessIdField;
@@ -29,7 +29,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        _model = [Model sharedInstance];
+        _model = [DirectoryModel sharedInstance];
     }
     return self;
 }

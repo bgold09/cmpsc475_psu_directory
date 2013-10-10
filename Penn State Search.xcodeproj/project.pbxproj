@@ -24,7 +24,7 @@
 		C872981417FBBD3200F8F43A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980D17FBBD3200F8F43A /* libssl.a */; };
 		C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */; };
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
-		C8EBB61A17FCA3F400D3BC0A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBB61917FCA3F400D3BC0A /* Model.m */; };
+		C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */; };
 		C8EBB61E17FCDFA600D3BC0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */; };
 		C8EBB62017FCDFF800D3BC0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */; };
 		C8EBB62717FCE21B00D3BC0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB62517FCE21B00D3BC0A /* icon.png */; };
@@ -66,8 +66,8 @@
 		C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHLDAPSearch.m; sourceTree = "<group>"; };
 		C872981617FBCF9500F8F43A /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		C872981717FBCF9500F8F43A /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
-		C8EBB61817FCA3F400D3BC0A /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = "Penn State Search/Model.h"; sourceTree = "<group>"; };
-		C8EBB61917FCA3F400D3BC0A /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = "Penn State Search/Model.m"; sourceTree = "<group>"; };
+		C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectoryModel.h; path = "Penn State Search/DirectoryModel.h"; sourceTree = "<group>"; };
+		C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectoryModel.m; path = "Penn State Search/DirectoryModel.m"; sourceTree = "<group>"; };
 		C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C8EBB62517FCE21B00D3BC0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 		C89C77BE180740B900DF1556 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C8EBB61817FCA3F400D3BC0A /* Model.h */,
-				C8EBB61917FCA3F400D3BC0A /* Model.m */,
+				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
+				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
 			);
 			name = Models;
 			path = ..;
@@ -285,7 +285,7 @@
 				C87297F917FBBD0F00F8F43A /* ViewController.m in Sources */,
 				C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */,
 				C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */,
-				C8EBB61A17FCA3F400D3BC0A /* Model.m in Sources */,
+				C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */,
 				C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

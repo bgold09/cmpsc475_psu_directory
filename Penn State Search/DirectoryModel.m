@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 BRIAN J GOLDEN. All rights reserved.
 //
 
-#import "Model.h"
+#import "DirectoryModel.h"
 #import "RHLDAPSearch.h"
 
 static NSString * const kConnectionString = @"ldap://ldap.psu.edu:389";
 static NSString * const kBaseString = @"dc=psu,dc=edu";
 
-@interface Model ()
+@interface DirectoryModel ()
 @property (strong, nonatomic) RHLDAPSearch *connection;
 @property (strong, nonatomic) NSArray *directoryResults;
 @property (strong, nonatomic) NSArray *requiredFieldKeys;
@@ -20,7 +20,7 @@ static NSString * const kBaseString = @"dc=psu,dc=edu";
 
 @end
 
-@implementation Model
+@implementation DirectoryModel
 
 + (id)sharedInstance {
 	static id singleton = nil;
