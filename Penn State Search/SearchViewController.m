@@ -34,15 +34,8 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
 - (void)viewWillAppear:(BOOL)animated {
-    [self.scrollView setScrollEnabled:YES];
-    [self.scrollView setContentSize:self.view.frame.size];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,10 +44,10 @@
     self.accessIdField.text = @"";
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidLoad
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:self.view.frame.size];
 }
 
 #pragma mark - Text Field Delegate
