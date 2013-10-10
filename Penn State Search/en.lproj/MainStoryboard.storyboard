@@ -68,12 +68,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="2N1-iQ-GFI" firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" type="default" id="3De-WE-QyB"/>
-                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="354" id="6e7-gi-nVw"/>
+                                    <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="103" id="5K1-GM-MxU"/>
                                     <constraint firstItem="2N1-iQ-GFI" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="92" id="Atk-GE-5lI"/>
                                     <constraint firstItem="anb-GX-WGQ" firstAttribute="centerX" secondItem="VEx-Kt-lJZ" secondAttribute="centerX" type="default" id="BDS-zV-fy7"/>
-                                    <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="106" id="F6x-ki-f8A"/>
                                     <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="22" id="INK-bb-W1f"/>
-                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="300" id="OG8-H3-aRb"/>
                                     <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="2N1-iQ-GFI" secondAttribute="leading" type="default" id="ZiS-6Z-NpT"/>
                                     <constraint firstItem="VEx-Kt-lJZ" firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" type="default" id="fRn-QO-jSQ"/>
                                     <constraint firstItem="VEx-Kt-lJZ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="157" id="gYO-vI-0WL"/>
@@ -81,6 +79,8 @@
                                     <constraint firstItem="v7N-RW-nlC" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="124" id="pBa-cg-eIL"/>
                                     <constraint firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" constant="16" id="swc-Tn-mIh"/>
                                     <constraint firstItem="Gbg-d1-IoH" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="37" id="tdv-0s-tTa"/>
+                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="254" id="uR9-nw-QS6"/>
+                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="308" id="vUs-1h-B29"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

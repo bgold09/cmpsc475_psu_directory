@@ -13,7 +13,6 @@
 @interface ResultsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) DirectoryModel *model;
-@property NSInteger resultNumber;
 
 @end
 
@@ -85,7 +84,6 @@
 #pragma mark - Table View Delegate
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    self.resultNumber = indexPath.row;
     [self performSegueWithIdentifier:@"DetailSegue" sender:self];
 }
 
@@ -94,7 +92,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailSegue"]) {
         ResultDetailViewController *detailViewController = segue.destinationViewController;
-        detailViewController.resultNumber = self.resultNumber;
+        detailViewController.resultNumber = [self.tableView indexPathForSelectedRow].row;
     }
 }
 

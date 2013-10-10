@@ -13,7 +13,6 @@
 @interface BuildingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) BuildingModel *model;
-@property NSInteger buildingNumber;
 
 @end
 
@@ -81,11 +80,6 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
-//        BuildingImageViewController *imageViewContoller =
-//            [self.storyboard instantiateViewControllerWithIdentifier:@"BuildingImageView"];
-//        imageViewContoller.buildingNumber = indexPath.row;
-//        [self.navigationController pushViewController:imageViewContoller animated:YES];
-        self.buildingNumber = indexPath.row;
         [self performSegueWithIdentifier:@"BuildingImageSegue" sender:self];
         
     }
@@ -95,9 +89,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
+        NSInteger buildingNumber = [self.tableView indexPathForSelectedRow].row;
         BuildingImageViewController *imageViewController = segue.destinationViewController;
-        imageViewController.buildingNumber = self.buildingNumber;
-        imageViewController.buildingName = [self.model nameForIndex:self.buildingNumber];
+        imageViewController.buildingNumber = buildingNumber;
+        imageViewController.buildingName = [self.model nameForIndex:buildingNumber];
     }
 }
 
