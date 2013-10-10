@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 BRIAN J GOLDEN. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SearchViewController.h"
 #import "ResultsViewController.h"
 #import "DirectoryModel.h"
 
@@ -14,7 +14,7 @@
 #define kStatusBarHeight 20.0
 #define kNavBarHeight    44.0
 
-@interface ViewController () <UITextFieldDelegate>
+@interface SearchViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) DirectoryModel *model;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation ViewController
+@implementation SearchViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];

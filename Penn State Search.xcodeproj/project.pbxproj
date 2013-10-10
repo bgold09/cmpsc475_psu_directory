@@ -16,7 +16,7 @@
 		C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297EC17FBBD0F00F8F43A /* AppDelegate.m */; };
 		C87297EF17FBBD0F00F8F43A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C87297EE17FBBD0F00F8F43A /* Default.png */; };
 		C87297F617FBBD0F00F8F43A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87297F417FBBD0F00F8F43A /* MainStoryboard.storyboard */; };
-		C87297F917FBBD0F00F8F43A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297F817FBBD0F00F8F43A /* ViewController.m */; };
+		C87297F917FBBD0F00F8F43A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C87297F817FBBD0F00F8F43A /* SearchViewController.m */; };
 		C872981017FBBD3200F8F43A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980917FBBD3200F8F43A /* libcrypto.a */; };
 		C872981117FBBD3200F8F43A /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980A17FBBD3200F8F43A /* liblber.a */; };
 		C872981217FBBD3200F8F43A /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980B17FBBD3200F8F43A /* libldap.a */; };
@@ -24,6 +24,7 @@
 		C872981417FBBD3200F8F43A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C872980D17FBBD3200F8F43A /* libssl.a */; };
 		C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */; };
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
+		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
 		C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */; };
 		C8EBB61E17FCDFA600D3BC0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */; };
 		C8EBB62017FCDFF800D3BC0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */; };
@@ -48,8 +49,8 @@
 		C87297F017FBBD0F00F8F43A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C87297F217FBBD0F00F8F43A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C87297F517FBBD0F00F8F43A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C87297F717FBBD0F00F8F43A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C87297F817FBBD0F00F8F43A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C87297F717FBBD0F00F8F43A /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		C87297F817FBBD0F00F8F43A /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		C872980117FBBD3200F8F43A /* lber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lber.h; sourceTree = "<group>"; };
 		C872980217FBBD3200F8F43A /* lber_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lber_types.h; sourceTree = "<group>"; };
 		C872980317FBBD3200F8F43A /* ldap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ldap.h; sourceTree = "<group>"; };
@@ -66,6 +67,8 @@
 		C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHLDAPSearch.m; sourceTree = "<group>"; };
 		C872981617FBCF9500F8F43A /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		C872981717FBCF9500F8F43A /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
+		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectoryModel.h; path = "Penn State Search/DirectoryModel.h"; sourceTree = "<group>"; };
 		C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectoryModel.m; path = "Penn State Search/DirectoryModel.m"; sourceTree = "<group>"; };
 		C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -204,10 +207,12 @@
 				C87297EC17FBBD0F00F8F43A /* AppDelegate.m */,
 				C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */,
 				C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */,
-				C87297F717FBBD0F00F8F43A /* ViewController.h */,
-				C87297F817FBBD0F00F8F43A /* ViewController.m */,
+				C87297F717FBBD0F00F8F43A /* SearchViewController.h */,
+				C87297F817FBBD0F00F8F43A /* SearchViewController.m */,
 				C872981617FBCF9500F8F43A /* ResultsViewController.h */,
 				C872981717FBCF9500F8F43A /* ResultsViewController.m */,
+				C8EB870318074A200009CA36 /* BuildingViewController.h */,
+				C8EB870418074A200009CA36 /* BuildingViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,11 +287,12 @@
 			files = (
 				C87297E917FBBD0F00F8F43A /* main.m in Sources */,
 				C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */,
-				C87297F917FBBD0F00F8F43A /* ViewController.m in Sources */,
+				C87297F917FBBD0F00F8F43A /* SearchViewController.m in Sources */,
 				C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */,
 				C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */,
 				C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */,
 				C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */,
+				C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
