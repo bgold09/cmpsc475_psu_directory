@@ -98,18 +98,19 @@
                         <outlet property="firstNameField" destination="2N1-iQ-GFI" id="AgD-Pd-kYY"/>
                         <outlet property="lastNameField" destination="VEx-Kt-lJZ" id="Mcx-Wd-Pb8"/>
                         <outlet property="scrollView" destination="VKy-pp-N1W" id="tpw-D0-7fd"/>
+                        <segue destination="TXm-1P-KIT" kind="push" identifier="ResultsSegue" id="gtF-Uf-Yu2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8" y="-833"/>
         </scene>
-        <!--Results View Controller-->
+        <!--Results View Controller - Results-->
         <scene sceneID="Lii-SO-gyX">
             <objects>
                 <viewController storyboardIdentifier="ResultsView" id="TXm-1P-KIT" customClass="ResultsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDe-iv-R8J">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="99" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P5v-gL-hR5">
@@ -151,9 +152,10 @@
                             <constraint firstItem="P5v-gL-hR5" firstAttribute="leading" secondItem="BDe-iv-R8J" secondAttribute="leading" type="default" id="tnd-Td-Pc9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VVh-7D-OO4"/>
+                    <navigationItem key="navigationItem" title="Results" id="VVh-7D-OO4"/>
                     <connections>
                         <outlet property="tableView" destination="P5v-gL-hR5" id="tUD-9z-IYY"/>
+                        <segue destination="S0U-Gt-o11" kind="push" identifier="DetailSegue" id="1Av-nS-ryK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9R-iM-n6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,7 +242,7 @@
             <objects>
                 <viewController storyboardIdentifier="ResultDetailView" id="S0U-Gt-o11" customClass="ResultDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Fr-fS-P6N">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-6B-UsH">
@@ -300,6 +302,7 @@
                             <constraint firstItem="OKZ-6B-UsH" firstAttribute="leading" secondItem="1Fr-fS-P6N" secondAttribute="leading" type="default" id="mJJ-BO-chq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QI3-S5-wWQ"/>
                     <connections>
                         <outlet property="tableView" destination="OKZ-6B-UsH" id="QsO-r7-6OA"/>
                     </connections>

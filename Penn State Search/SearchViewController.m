@@ -115,8 +115,7 @@
                                                   otherButtonTitles:nil];
             [alert show];
         } else {
-            ResultsViewController *resultsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultsView"];
-            [self.navigationController pushViewController:resultsViewController animated:YES];
+            [self performSegueWithIdentifier:@"ResultsSegue" sender:self];
         }
     }
 }
