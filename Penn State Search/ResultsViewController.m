@@ -92,7 +92,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailSegue"]) {
         ResultDetailViewController *detailViewController = segue.destinationViewController;
-        detailViewController.resultNumber = [self.tableView indexPathForSelectedRow].row;
+        detailViewController.resultNumber = self.tableView.indexPathForSelectedRow.row;
     }
 }
 

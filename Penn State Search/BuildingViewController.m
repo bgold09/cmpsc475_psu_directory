@@ -89,7 +89,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
-        NSInteger buildingNumber = [self.tableView indexPathForSelectedRow].row;
+        NSInteger buildingNumber = self.tableView.indexPathForSelectedRow.row;
         BuildingImageViewController *imageViewController = segue.destinationViewController;
         imageViewController.buildingNumber = buildingNumber;
         imageViewController.buildingName = [self.model nameForIndex:buildingNumber];
