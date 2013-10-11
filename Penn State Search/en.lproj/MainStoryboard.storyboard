@@ -14,6 +14,15 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-pp-N1W">
                                 <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penn State Directory Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-d1-IoH">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="282" id="82m-ix-wcT"/>
+                                            <constraint firstAttribute="height" constant="33" id="8Zc-uQ-le3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7N-RW-nlC">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="rD7-lX-Uc0"/>
@@ -32,9 +41,6 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2N1-iQ-GFI">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="282" id="m2p-4t-CRq"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                         <connections>
@@ -61,17 +67,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="103" id="5K1-GM-MxU"/>
-                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="92" id="Atk-GE-5lI"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" type="default" id="3De-WE-QyB"/>
+                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="122" id="72a-Sh-jM9"/>
                                     <constraint firstItem="anb-GX-WGQ" firstAttribute="centerX" secondItem="VEx-Kt-lJZ" secondAttribute="centerX" type="default" id="BDS-zV-fy7"/>
-                                    <constraint firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" constant="16" id="UZY-pz-sJs"/>
+                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="325" id="Bd6-PU-iQD"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="109" id="Pm9-Hc-X3G"/>
+                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="271" id="Sup-uP-htk"/>
+                                    <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZMp-gQ-OKx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" constant="18" id="ayr-pb-Io9"/>
                                     <constraint firstItem="VEx-Kt-lJZ" firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" type="default" id="fRn-QO-jSQ"/>
-                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="157" id="gYO-vI-0WL"/>
-                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VEx-Kt-lJZ" secondAttribute="leading" type="default" id="h18-Y4-3RV"/>
-                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="124" id="pBa-cg-eIL"/>
-                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="22" id="rFh-MQ-SiZ"/>
-                                    <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="254" id="uR9-nw-QS6"/>
-                                    <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="308" id="vUs-1h-B29"/>
+                                    <constraint firstItem="Gbg-d1-IoH" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="54" id="mAT-BT-qrc"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oHc-KI-hUf"/>
+                                    <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="86" id="qOc-4X-FmO"/>
+                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vB7-lE-x4k"/>
+                                    <constraint firstItem="VEx-Kt-lJZ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="174" id="yOD-v6-Hfq"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
