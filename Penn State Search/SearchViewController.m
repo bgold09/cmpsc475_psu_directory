@@ -34,10 +34,6 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     self.firstNameField.text = @"";
     self.lastNameField.text = @"";
