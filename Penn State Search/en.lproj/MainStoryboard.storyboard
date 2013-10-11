@@ -14,15 +14,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-pp-N1W">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penn State Directory Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbg-d1-IoH">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="282" id="82m-ix-wcT"/>
-                                            <constraint firstAttribute="height" constant="33" id="8Zc-uQ-le3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7N-RW-nlC">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="rD7-lX-Uc0"/>
@@ -41,6 +32,9 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2N1-iQ-GFI">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="282" id="m2p-4t-CRq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                         <connections>
@@ -67,18 +61,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" type="default" id="3De-WE-QyB"/>
                                     <constraint firstAttribute="bottom" secondItem="v7N-RW-nlC" secondAttribute="bottom" constant="103" id="5K1-GM-MxU"/>
                                     <constraint firstItem="2N1-iQ-GFI" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="92" id="Atk-GE-5lI"/>
                                     <constraint firstItem="anb-GX-WGQ" firstAttribute="centerX" secondItem="VEx-Kt-lJZ" secondAttribute="centerX" type="default" id="BDS-zV-fy7"/>
-                                    <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="22" id="INK-bb-W1f"/>
-                                    <constraint firstItem="Gbg-d1-IoH" firstAttribute="leading" secondItem="2N1-iQ-GFI" secondAttribute="leading" type="default" id="ZiS-6Z-NpT"/>
+                                    <constraint firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" constant="16" id="UZY-pz-sJs"/>
                                     <constraint firstItem="VEx-Kt-lJZ" firstAttribute="trailing" secondItem="2N1-iQ-GFI" secondAttribute="trailing" type="default" id="fRn-QO-jSQ"/>
                                     <constraint firstItem="VEx-Kt-lJZ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="157" id="gYO-vI-0WL"/>
                                     <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VEx-Kt-lJZ" secondAttribute="leading" type="default" id="h18-Y4-3RV"/>
                                     <constraint firstItem="v7N-RW-nlC" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="124" id="pBa-cg-eIL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gbg-d1-IoH" secondAttribute="trailing" constant="16" id="swc-Tn-mIh"/>
-                                    <constraint firstItem="Gbg-d1-IoH" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="37" id="tdv-0s-tTa"/>
+                                    <constraint firstItem="2N1-iQ-GFI" firstAttribute="leading" secondItem="VKy-pp-N1W" secondAttribute="leading" constant="22" id="rFh-MQ-SiZ"/>
                                     <constraint firstItem="anb-GX-WGQ" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="254" id="uR9-nw-QS6"/>
                                     <constraint firstItem="v7N-RW-nlC" firstAttribute="top" secondItem="VKy-pp-N1W" secondAttribute="top" constant="308" id="vUs-1h-B29"/>
                                 </constraints>
@@ -103,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120" y="-1169"/>
+            <point key="canvasLocation" x="-646" y="-1115"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="Lii-SO-gyX">
@@ -160,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9R-iM-n6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-1169"/>
+            <point key="canvasLocation" x="-95" y="-1115"/>
         </scene>
         <!--Building View Controller - Search-->
         <scene sceneID="uac-rp-B92">
@@ -309,13 +300,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TT0-fL-0Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="-1169"/>
+            <point key="canvasLocation" x="407" y="-1115"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="Bfn-mg-j4Y">
             <objects>
                 <navigationController id="UXu-9D-pvy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="76y-l8-wJJ"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="06-magnify.png" id="76y-l8-wJJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TyA-XI-Ic8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -328,7 +319,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSA-Ez-21L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646" y="-1169"/>
+            <point key="canvasLocation" x="-1172" y="-1115"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hYa-36-9jR">
@@ -347,13 +338,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKh-rt-mux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1172" y="-1169"/>
+            <point key="canvasLocation" x="-1844" y="-713"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="avC-aZ-hA0">
             <objects>
                 <navigationController id="lJk-i8-KfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LHI-nn-dve"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="07-map-marker.png" id="LHI-nn-dve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="njv-yB-U7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -369,6 +360,49 @@
             <point key="canvasLocation" x="-1172" y="-380"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="06-magnify.png" width="24" height="24"/>
+        <image name="07-map-marker.png" width="16" height="26"/>
+    </resources>
+    <classes>
+        <class className="BuildingImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="BuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ResultDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchPressed:"/>
+                <relationship kind="outlet" name="accessIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

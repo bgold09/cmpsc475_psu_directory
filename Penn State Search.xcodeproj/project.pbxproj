@@ -59,6 +59,8 @@
 		C8EB8783180750140009CA36 /* smeal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8763180750140009CA36 /* smeal.jpg */; };
 		C8EB8784180750140009CA36 /* buildings.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8764180750140009CA36 /* buildings.plist */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
+		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
+		C8EB878B180776640009CA36 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB878A180776640009CA36 /* 06-magnify.png */; };
 		C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */; };
 		C8EBB61E17FCDFA600D3BC0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */; };
 		C8EBB62017FCDFF800D3BC0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */; };
@@ -139,6 +141,8 @@
 		C8EB8764180750140009CA36 /* buildings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = buildings.plist; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
 		C8EB8786180757180009CA36 /* BuildingImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingImageViewController.m; sourceTree = "<group>"; };
+		C8EB8788180776570009CA36 /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
+		C8EB878A180776640009CA36 /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
 		C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectoryModel.h; path = "Penn State Search/DirectoryModel.h"; sourceTree = "<group>"; };
 		C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectoryModel.m; path = "Penn State Search/DirectoryModel.m"; sourceTree = "<group>"; };
 		C8EBB61C17FCDFA600D3BC0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 		C87297E317FBBD0F00F8F43A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8EB8788180776570009CA36 /* 07-map-marker.png */,
+				C8EB878A180776640009CA36 /* 06-magnify.png */,
 				C8EB8743180750140009CA36 /* Buildings */,
 				C87297E417FBBD0F00F8F43A /* Penn State Search-Info.plist */,
 				C87297E517FBBD0F00F8F43A /* InfoPlist.strings */,
@@ -429,6 +435,8 @@
 				C8EB8782180750140009CA36 /* engunit.jpg in Resources */,
 				C8EB8783180750140009CA36 /* smeal.jpg in Resources */,
 				C8EB8784180750140009CA36 /* buildings.plist in Resources */,
+				C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */,
+				C8EB878B180776640009CA36 /* 06-magnify.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
