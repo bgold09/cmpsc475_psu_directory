@@ -14,5 +14,4 @@
 - (NSString *)nameForIndex:(NSInteger)index;
 - (UIImage *)imageForIndex:(NSInteger)index;
 - (BOOL)hasImageForIndex:(NSInteger)index;
-- (void)sortByBuildingName;
 @end

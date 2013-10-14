@@ -22,7 +22,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         _model = [BuildingModel sharedInstance];
-        [_model sortByBuildingName];
     }
     return self;
 }

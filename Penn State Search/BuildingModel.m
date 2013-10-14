@@ -27,6 +27,7 @@
     self = [super init];
     if (self) {
         _buildings = [self allBuildingInfo];
+        [self sortByBuildingName];
     }
     return self;
 }
