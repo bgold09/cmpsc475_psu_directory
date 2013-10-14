@@ -33,17 +33,6 @@
     self.tableView.delegate = self;
 }
 
-- (void)detailButtonPressed:(id)sender event:(id)event {
-    NSSet *touches = [event allTouches];
-    UITouch *touch = [touches anyObject];
-    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:currentTouchPosition];
-    
-    if (indexPath != nil) {
-        [self tableView:self.tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
-    }
-}
-
 #pragma mark - Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -60,18 +49,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     cell.textLabel.text = [self.model displayNameForIndex:indexPath.row];
     cell.detailTextLabel.text = [self.model postalAddressForIndex:indexPath.row];
-    UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [detailButton addTarget:self action:@selector(detailButtonPressed:event:) forControlEvents:UIControlEventTouchUpInside];
-    cell.accessoryView = detailButton;
     
     return cell;
 }
 
 #pragma mark - Table View Delegate
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"DetailSegue" sender:self];
