@@ -25,7 +25,6 @@
 		C872981517FBBD3200F8F43A /* RHLDAPSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = C872980F17FBBD3200F8F43A /* RHLDAPSearch.m */; };
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
 		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
-		C8EB874218074F9E0009CA36 /* BuildingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB874118074F9E0009CA36 /* BuildingModel.m */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
 		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
 		C8EB878B180776640009CA36 /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB878A180776640009CA36 /* 06-magnify.png */; };
@@ -66,6 +65,7 @@
 		C8FE60C0180CA7A000CA31B2 /* engunit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60A1180CA7A000CA31B2 /* engunit.jpg */; };
 		C8FE60C1180CA7A000CA31B2 /* smeal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60A2180CA7A000CA31B2 /* smeal.jpg */; };
 		C8FE60C3180CA7AB00CA31B2 /* buildings.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60C2180CA7AB00CA31B2 /* buildings.plist */; };
+		C8FE60C8180CA97F00CA31B2 /* BuildingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,8 +105,6 @@
 		C872981717FBCF9500F8F43A /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
-		C8EB874018074F9E0009CA36 /* BuildingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingModel.h; sourceTree = "<group>"; };
-		C8EB874118074F9E0009CA36 /* BuildingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingModel.m; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
 		C8EB8786180757180009CA36 /* BuildingImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingImageViewController.m; sourceTree = "<group>"; };
 		C8EB8788180776570009CA36 /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-map-marker.png"; sourceTree = "<group>"; };
@@ -149,6 +147,8 @@
 		C8FE60A1180CA7A000CA31B2 /* engunit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = engunit.jpg; sourceTree = "<group>"; };
 		C8FE60A2180CA7A000CA31B2 /* smeal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smeal.jpg; sourceTree = "<group>"; };
 		C8FE60C2180CA7AB00CA31B2 /* buildings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = buildings.plist; path = "Penn State Search/buildings.plist"; sourceTree = SOURCE_ROOT; };
+		C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BuildingModel.h; path = "Penn State Search/BuildingModel.h"; sourceTree = "<group>"; };
+		C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BuildingModel.m; path = "Penn State Search/BuildingModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +272,8 @@
 			children = (
 				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
 				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
-				C8EB874018074F9E0009CA36 /* BuildingModel.h */,
-				C8EB874118074F9E0009CA36 /* BuildingModel.m */,
+				C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */,
+				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
 			);
 			name = Models;
 			path = ..;
@@ -447,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FE60C8180CA97F00CA31B2 /* BuildingModel.m in Sources */,
 				C87297E917FBBD0F00F8F43A /* main.m in Sources */,
 				C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */,
 				C87297F917FBBD0F00F8F43A /* SearchViewController.m in Sources */,
@@ -455,7 +456,6 @@
 				C8EBB61A17FCA3F400D3BC0A /* DirectoryModel.m in Sources */,
 				C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */,
 				C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */,
-				C8EB874218074F9E0009CA36 /* BuildingModel.m in Sources */,
 				C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
