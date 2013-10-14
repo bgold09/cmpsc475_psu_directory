@@ -15,6 +15,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 @interface BuildingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) BuildingModel *model;
 
 @end
@@ -34,6 +35,11 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.settingsButton.title = @"\u2699";
+    UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, UITextAttributeFont, nil];
+    [self.settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
 }
 
 #pragma mark - Data Source
