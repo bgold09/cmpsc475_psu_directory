@@ -10,6 +10,9 @@
 #import "BuildingImageViewController.h"
 #import "BuildingModel.h"
 
+static NSString * const CellIndentifierWithImage = @"CellWithImage";
+static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
+
 @interface BuildingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) BuildingModel *model;
@@ -44,16 +47,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIndentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIndentifier];
-    cell.textLabel.text = [self.model nameForIndex:indexPath.row];
+    NSString *cellIdentifier;
     
     if ([self.model hasImageForIndex:indexPath.row]) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cellIdentifier = CellIndentifierWithImage;
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cellIdentifier = CellIdentifierWithoutImage;
     }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.textLabel.text = [self.model nameForIndex:indexPath.row];
     
     return cell;
 }
@@ -63,7 +66,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
+    if ([cell.reuseIdentifier isEqualToString:CellIndentifierWithImage]) {
         [self performSegueWithIdentifier:@"BuildingImageSegue" sender:self];
     }
 }
