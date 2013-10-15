@@ -73,7 +73,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
         index = [self.model indexForBuildingWithImageNumber:indexPath.row];
     }
     
-    if ([self.model hasImageForIndex:index]) {
+    if (![showAllBuildings boolValue] || [self.model hasImageForIndex:index]) {
         cellIdentifier = CellIndentifierWithImage;
     } else {
         cellIdentifier = CellIdentifierWithoutImage;
