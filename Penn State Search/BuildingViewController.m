@@ -9,6 +9,7 @@
 #import "BuildingViewController.h"
 #import "BuildingImageViewController.h"
 #import "BuildingModel.h"
+#import "Constants.h"
 
 static NSString * const CellIndentifierWithImage = @"CellWithImage";
 static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
@@ -42,6 +43,10 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     [self.settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 #pragma mark - Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,20 +54,33 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.model count];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
+    return [showAllBuildings boolValue] ? [self.model count] : [self.model countWithImages];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier;
     
-    if ([self.model hasImageForIndex:indexPath.row]) {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
+    
+    NSInteger index;
+    
+    if ([showAllBuildings boolValue]) {
+        index = indexPath.row;
+    } else {
+        index = [self.model indexForBuildingWithImageNumber:indexPath.row];
+    }
+    
+    if ([self.model hasImageForIndex:index]) {
         cellIdentifier = CellIndentifierWithImage;
     } else {
         cellIdentifier = CellIdentifierWithoutImage;
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = [self.model nameForIndex:indexPath.row];
+    cell.textLabel.text = [self.model nameForIndex:index];
     
     return cell;
 }

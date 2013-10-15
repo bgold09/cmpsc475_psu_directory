@@ -11,6 +11,8 @@
 @interface BuildingModel : NSObject
 + (id)sharedInstance;
 - (NSInteger)count;
+- (NSInteger)countWithImages;
+- (NSInteger)indexForBuildingWithImageNumber:(NSInteger)index;
 - (NSString *)nameForIndex:(NSInteger)index;
 - (UIImage *)imageForIndex:(NSInteger)index;
 - (BOOL)hasImageForIndex:(NSInteger)index;

@@ -36,6 +36,38 @@
     return self.buildings.count;
 }
 
+- (NSInteger)countWithImages {
+    NSInteger count = 0;
+    
+    for (NSDictionary *buildingInfo in self.buildings) {
+        NSString *imageName = [buildingInfo objectForKey:@"photo"];
+        if (imageName.length > 0) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
+- (NSInteger)indexForBuildingWithImageNumber:(NSInteger)index {
+    NSInteger count = 0;
+        
+    for (NSInteger buildingIndex = 0; buildingIndex < [self.buildings count]; buildingIndex++) {
+        NSDictionary *buildingInfo = [self.buildings objectAtIndex:buildingIndex];
+        NSString *imageName = [buildingInfo objectForKey:@"photo"];
+        
+        if (imageName.length > 0) {
+            count++;
+        }
+        
+        if (count - 1 == index) {
+            return buildingIndex;
+        }
+    }
+    
+    return 0;
+}
+
 - (NSString *)nameForIndex:(NSInteger)index {
     NSDictionary *buildingInfo = [self.buildings objectAtIndex:index];
     NSString *name = [buildingInfo objectForKey:@"name"];
