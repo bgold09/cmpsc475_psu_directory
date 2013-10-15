@@ -8,6 +8,7 @@
 
 #import "BuildingImageViewController.h"
 #import "BuildingModel.h"
+#import "Constants.h"
 
 @interface BuildingImageViewController ()
 @property (strong, nonatomic) BuildingModel *model;
@@ -41,8 +42,20 @@
     self.scrollView.bouncesZoom = NO;
     self.scrollView.delegate = self;
     
-    [self.scrollView zoomToRect:self.buildingImageView.bounds animated:YES];
+    [self.scrollView zoomToRect:self.buildingImageView.bounds animated:NO];
     self.title = self.buildingName;
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSNumber *boolAllowZooming = [preferences objectForKey:kAllowZooming];
+    
+    if (![boolAllowZooming boolValue]) {
+        [self lockZoom];
+    }
+}
+
+-(void)lockZoom {
+    self.scrollView.maximumZoomScale = 1.0;
+    self.scrollView.minimumZoomScale = 1.0;
 }
 
 #pragma mark - ScrollView Delegate

@@ -26,7 +26,6 @@
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
 		C89690C1180CB2F7008952FD /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C0180CB2F7008952FD /* PreferencesViewController.m */; };
 		C89690C4180CB4CD008952FD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C3180CB4CD008952FD /* Constants.m */; };
-		C8BE963D180CB60B00588D53 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8BE963C180CB60B00588D53 /* Settings.bundle */; };
 		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
 		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
@@ -110,7 +109,6 @@
 		C89690C0180CB2F7008952FD /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		C89690C2180CB4CD008952FD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C89690C3180CB4CD008952FD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		C8BE963C180CB60B00588D53 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
@@ -224,21 +222,20 @@
 		C87297E317FBBD0F00F8F43A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8FE60C4180CA7BF00CA31B2 /* Buildings */,
+				C8EB878A180776640009CA36 /* 06-magnify.png */,
+				C8EB8788180776570009CA36 /* 07-map-marker.png */,
 				C87297EB17FBBD0F00F8F43A /* AppDelegate.h */,
 				C87297EC17FBBD0F00F8F43A /* AppDelegate.m */,
-				C8FE60C4180CA7BF00CA31B2 /* Buildings */,
-				C8EB8788180776570009CA36 /* 07-map-marker.png */,
-				C8EB878A180776640009CA36 /* 06-magnify.png */,
-				C87297E417FBBD0F00F8F43A /* Penn State Search-Info.plist */,
-				C87297E517FBBD0F00F8F43A /* InfoPlist.strings */,
-				C87297E817FBBD0F00F8F43A /* main.m */,
-				C87297EA17FBBD0F00F8F43A /* Penn State Search-Prefix.pch */,
-				C87297EE17FBBD0F00F8F43A /* Default.png */,
-				C87297F017FBBD0F00F8F43A /* Default@2x.png */,
-				C87297F217FBBD0F00F8F43A /* Default-568h@2x.png */,
 				C89690C2180CB4CD008952FD /* Constants.h */,
 				C89690C3180CB4CD008952FD /* Constants.m */,
-				C8BE963C180CB60B00588D53 /* Settings.bundle */,
+				C87297F217FBBD0F00F8F43A /* Default-568h@2x.png */,
+				C87297EE17FBBD0F00F8F43A /* Default.png */,
+				C87297F017FBBD0F00F8F43A /* Default@2x.png */,
+				C87297E517FBBD0F00F8F43A /* InfoPlist.strings */,
+				C87297E817FBBD0F00F8F43A /* main.m */,
+				C87297E417FBBD0F00F8F43A /* Penn State Search-Info.plist */,
+				C87297EA17FBBD0F00F8F43A /* Penn State Search-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -283,10 +280,10 @@
 		C89C77BE180740B900DF1556 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
-				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
 				C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */,
 				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
+				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
+				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
 			);
 			name = Models;
 			path = ..;
@@ -295,18 +292,18 @@
 		C89C77C01807416300DF1556 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C8EB8785180757180009CA36 /* BuildingImageViewController.h */,
+				C8EB8786180757180009CA36 /* BuildingImageViewController.m */,
+				C8EB870318074A200009CA36 /* BuildingViewController.h */,
+				C8EB870418074A200009CA36 /* BuildingViewController.m */,
 				C89690BF180CB2F7008952FD /* PreferencesViewController.h */,
 				C89690C0180CB2F7008952FD /* PreferencesViewController.m */,
 				C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */,
 				C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */,
-				C87297F717FBBD0F00F8F43A /* SearchViewController.h */,
-				C87297F817FBBD0F00F8F43A /* SearchViewController.m */,
 				C872981617FBCF9500F8F43A /* ResultsViewController.h */,
 				C872981717FBCF9500F8F43A /* ResultsViewController.m */,
-				C8EB870318074A200009CA36 /* BuildingViewController.h */,
-				C8EB870418074A200009CA36 /* BuildingViewController.m */,
-				C8EB8785180757180009CA36 /* BuildingImageViewController.h */,
-				C8EB8786180757180009CA36 /* BuildingImageViewController.m */,
+				C87297F717FBBD0F00F8F43A /* SearchViewController.h */,
+				C87297F817FBBD0F00F8F43A /* SearchViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -450,7 +447,6 @@
 				C8FE60C0180CA7A000CA31B2 /* engunit.jpg in Resources */,
 				C8FE60C1180CA7A000CA31B2 /* smeal.jpg in Resources */,
 				C8FE60C3180CA7AB00CA31B2 /* buildings.plist in Resources */,
-				C8BE963D180CB60B00588D53 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
