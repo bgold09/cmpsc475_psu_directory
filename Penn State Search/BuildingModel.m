@@ -7,9 +7,13 @@
 //
 
 #import "BuildingModel.h"
+#import "Building.h"
+
+static NSString * const archiveFilename = @"buildings.archive";
 
 @interface BuildingModel ()
 @property (strong, nonatomic) NSMutableArray *buildings;
+@property (strong, nonatomic) NSMutableArray *buildingInfoArray;
 
 @end
 
@@ -26,22 +30,65 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _buildings = [self allBuildingInfo];
+        
+        if ([self fileExists]) {
+            NSString *archiveFilePath = [self archiveFilePath];
+            _buildingInfoArray = [NSKeyedUnarchiver unarchiveObjectWithFile:archiveFilePath];
+        } else {
+            _buildings = [self allBuildingInfo];
+            
+            _buildingInfoArray = [NSMutableArray array];
+            for (NSDictionary *dict in self.buildings) {
+                NSNumber *buildingCode = dict[@"opp_bldg_code"];
+                NSNumber *year = dict[@"year_constructed"];
+                NSNumber *latitude = dict[@"latitude"];
+                NSNumber *longitude = dict[@"longitude"];
+                
+                Building *building = [[Building alloc] initWithName:dict[@"name"]
+                                                       buildingCode:[buildingCode integerValue]
+                                                    yearConstructed:[year integerValue]
+                                                           latitude:[latitude floatValue]
+                                                          longitude:[longitude floatValue]
+                                                         photoNamed:dict[@"photo"]];
+                
+                [_buildingInfoArray addObject:building];
+            }
+            
+            [NSKeyedArchiver archiveRootObject:_buildingInfoArray toFile:[self archiveFilePath]];
+        }
+        
         [self sortByBuildingName];
     }
     return self;
 }
 
+#pragma mark - File System
+
+- (NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+- (NSString *)archiveFilePath {
+    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:archiveFilename];
+}
+
+- (BOOL)fileExists {
+    NSString *archiveFilePath = [self archiveFilePath];
+    return [[NSFileManager defaultManager] fileExistsAtPath:archiveFilePath];
+}
+
+#pragma mark - Public Methods
+
 - (NSInteger)count {
-    return self.buildings.count;
+    return self.buildingInfoArray.count;
 }
 
 - (NSInteger)countWithImages {
     NSInteger count = 0;
     
-    for (NSDictionary *buildingInfo in self.buildings) {
-        NSString *imageName = [buildingInfo objectForKey:@"photo"];
-        if (imageName.length > 0) {
+    for (Building *buildingInfo in self.buildingInfoArray) {
+        
+        if (buildingInfo.image) {
             count++;
         }
     }
@@ -52,11 +99,8 @@
 - (NSInteger)indexForBuildingWithImageNumber:(NSInteger)index {
     NSInteger count = 0;
         
-    for (NSInteger buildingIndex = 0; buildingIndex < [self.buildings count]; buildingIndex++) {
-        NSDictionary *buildingInfo = [self.buildings objectAtIndex:buildingIndex];
-        NSString *imageName = [buildingInfo objectForKey:@"photo"];
-        
-        if (imageName.length > 0) {
+    for (NSInteger buildingIndex = 0; buildingIndex < [self.buildingInfoArray count]; buildingIndex++) {
+        if ([self hasImageForIndex:buildingIndex]) {
             count++;
         }
         
@@ -69,33 +113,34 @@
 }
 
 - (NSString *)nameForIndex:(NSInteger)index {
-    NSDictionary *buildingInfo = [self.buildings objectAtIndex:index];
-    NSString *name = [buildingInfo objectForKey:@"name"];
+    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    NSString *name = buildingInfo.name;
     return name;
 }
 
 - (UIImage *)imageForIndex:(NSInteger)index {
-    NSDictionary *buildingInfo = [self.buildings objectAtIndex:index];
-    NSString *imageName = [buildingInfo objectForKey:@"photo"];
-    NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"jpg"];    
-    UIImage *image = [UIImage imageWithContentsOfFile:imageFilePath];
+    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    UIImage *image = buildingInfo.image;    
     return image;
 }
 
 - (BOOL)hasImageForIndex:(NSInteger)index {
-    NSDictionary *buildingInfo = [self.buildings objectAtIndex:index];
-    NSString *imageName = [buildingInfo objectForKey:@"photo"];
+    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    UIImage *image = buildingInfo.image;
     
-    if (imageName.length == 0) {
-        return NO;
+    if (image) {
+        return YES;
     }
     
-    return YES;
+    return NO;
 }
+
+#pragma mark - Private Methods
 
 - (void)sortByBuildingName {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    [self.buildings sortUsingDescriptors:@[sortDescriptor]];
+    [self.buildingInfoArray sortUsingDescriptors:@[sortDescriptor]];
+    
 }
 
 - (NSMutableArray *)allBuildingInfo {

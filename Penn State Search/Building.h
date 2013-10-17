@@ -16,4 +16,6 @@
 @property (readonly) CGFloat latititude;
 @property (readonly) CGFloat longitude;
 
+- (id)initWithName:(NSString *)name buildingCode:(NSInteger)buildingCode yearConstructed:(NSInteger)yearConstructed latitude:(CGFloat)latitude longitude:(CGFloat)longitude photoNamed:(NSString *)photoFileName;
+
 @end

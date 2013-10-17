@@ -36,8 +36,10 @@ static NSString * const  kLongtitudeKey = @"longitide";
         _latititude = latitude;
         _longitude = longitude;
         
-        NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:photoFileName ofType:@"jpg"];
-        _image = [UIImage imageWithContentsOfFile:imageFilePath];
+        if (photoFileName.length > 0) {
+            NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:photoFileName ofType:@"jpg"];
+            _image = [UIImage imageWithContentsOfFile:imageFilePath];
+        }
     }
     
     return self;
