@@ -220,7 +220,7 @@
                     <navigationItem key="navigationItem" title="Search" id="pnx-kT-VJz">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Q72-u6-XJH">
                             <connections>
-                                <segue destination="Lg8-7J-lEb" kind="modal" identifier="PreferencesSegue" modalTransitionStyle="flipHorizontal" id="Wxc-zO-i5n"/>
+                                <segue destination="Lg8-7J-lEb" kind="modal" identifier="PreferencesSegue" modalTransitionStyle="coverVertical" id="Wxc-zO-i5n"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -244,22 +244,30 @@
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xY5-MU-KYX"/>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmV-vn-X2N"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Zooming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBs-dd-FCU">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Allow Zooming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBs-dd-FCU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="7cD-TD-gqG"/>
+                                    <constraint firstAttribute="height" constant="21" id="JoW-OV-97R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show Buildings Without Images" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="146" translatesAutoresizingMaskIntoConstraints="NO" id="ByB-0p-DYY">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show Buildings Without Images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="181" translatesAutoresizingMaskIntoConstraints="NO" id="ByB-0p-DYY">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="00F-qa-nxH"/>
-                                    <constraint firstAttribute="width" constant="146" id="WLi-RZ-3gL"/>
+                                    <constraint firstAttribute="width" constant="181" id="xCI-Dy-Wm6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfn-33-LUz">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfn-33-LUz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ivc-GS-2U5"/>
+                                    <constraint firstAttribute="width" constant="118" id="QzS-nt-Hxd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,18 +280,18 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jmV-vn-X2N" firstAttribute="leading" secondItem="ByB-0p-DYY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="1lo-ek-GO0"/>
-                            <constraint firstItem="dfn-33-LUz" firstAttribute="trailing" secondItem="ByB-0p-DYY" secondAttribute="trailing" type="default" id="Amk-6T-6Ga"/>
-                            <constraint firstItem="xY5-MU-KYX" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="94" id="DcU-AR-BP5"/>
-                            <constraint firstItem="xY5-MU-KYX" firstAttribute="centerY" secondItem="FBs-dd-FCU" secondAttribute="centerY" type="default" id="FZE-NL-uwf"/>
+                            <constraint firstItem="ByB-0p-DYY" firstAttribute="centerX" secondItem="jmV-vn-X2N" secondAttribute="centerX" type="default" id="27t-wW-yVy"/>
+                            <constraint firstItem="FBs-dd-FCU" firstAttribute="centerX" secondItem="xY5-MU-KYX" secondAttribute="centerX" type="default" id="5O6-8y-LKr"/>
+                            <constraint firstItem="FBs-dd-FCU" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="90" id="FbH-tI-1xG"/>
                             <constraint firstAttribute="bottom" secondItem="dfn-33-LUz" secondAttribute="bottom" constant="75" id="GJH-3l-e6C"/>
-                            <constraint firstItem="dfn-33-LUz" firstAttribute="centerX" secondItem="FIT-jG-3en" secondAttribute="centerX" type="default" id="Ohp-wT-9Yh"/>
-                            <constraint firstItem="jmV-vn-X2N" firstAttribute="leading" secondItem="xY5-MU-KYX" secondAttribute="leading" type="default" id="Xgw-0D-Ko2"/>
-                            <constraint firstItem="ByB-0p-DYY" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="173" id="d99-HV-kBL"/>
-                            <constraint firstItem="FBs-dd-FCU" firstAttribute="leading" secondItem="ByB-0p-DYY" secondAttribute="leading" type="default" id="giR-da-aiu"/>
-                            <constraint firstItem="jmV-vn-X2N" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="209" id="pQI-Ty-PSg"/>
+                            <constraint firstItem="dfn-33-LUz" firstAttribute="centerX" secondItem="jmV-vn-X2N" secondAttribute="centerX" type="default" id="KWo-8y-1a1"/>
+                            <constraint firstItem="xY5-MU-KYX" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="131" id="Rys-0h-Kfh"/>
+                            <constraint firstItem="ByB-0p-DYY" firstAttribute="top" secondItem="FIT-jG-3en" secondAttribute="top" constant="217" id="VJ9-dj-C5h"/>
+                            <constraint firstAttribute="bottom" secondItem="jmV-vn-X2N" secondAttribute="bottom" constant="212" id="Xk2-z8-YC5"/>
+                            <constraint firstItem="dfn-33-LUz" firstAttribute="centerX" secondItem="FIT-jG-3en" secondAttribute="centerX" type="default" id="d5z-uf-Qpi"/>
+                            <constraint firstItem="jmV-vn-X2N" firstAttribute="leading" secondItem="xY5-MU-KYX" secondAttribute="leading" type="default" id="iHh-Hi-zGJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="csF-Uc-ulw"/>
@@ -362,7 +370,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="158" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="158"/>
+                                        <rect key="frame" x="0.0" y="179" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="157"/>
