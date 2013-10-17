@@ -12,7 +12,6 @@
 static NSString * const archiveFilename = @"buildings.archive";
 
 @interface BuildingModel ()
-@property (strong, nonatomic) NSMutableArray *buildings;
 @property (strong, nonatomic) NSMutableArray *buildingInfoArray;
 
 @end
@@ -35,10 +34,10 @@ static NSString * const archiveFilename = @"buildings.archive";
             NSString *archiveFilePath = [self archiveFilePath];
             _buildingInfoArray = [NSKeyedUnarchiver unarchiveObjectWithFile:archiveFilePath];
         } else {
-            _buildings = [self allBuildingInfo];
+            NSMutableArray *buildings = [self allBuildingInfo];
             
             _buildingInfoArray = [NSMutableArray array];
-            for (NSDictionary *dict in self.buildings) {
+            for (NSDictionary *dict in buildings) {
                 NSNumber *buildingCode = dict[@"opp_bldg_code"];
                 NSNumber *year = dict[@"year_constructed"];
                 NSNumber *latitude = dict[@"latitude"];
