@@ -13,7 +13,7 @@ static NSString * const kImageKey = @"image";
 static NSString * const kBuildingCodeKey = @"buildingCode";
 static NSString * const kYearConstructedKey = @"yearConstructed";
 static NSString * const kLatitudeKey = @"latitude";
-static NSString * const  kLongtitudeKey = @"longitide";
+static NSString * const kLongtitudeKey = @"longitide";
 
 @interface BuildingInfo ()
 @property (strong, nonatomic) NSString *name;

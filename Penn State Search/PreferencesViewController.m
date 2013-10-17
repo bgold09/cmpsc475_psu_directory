@@ -37,12 +37,6 @@
     self.showImagesSwitch.on = [boolShowAll boolValue];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)dismissPressed:(id)sender {
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];

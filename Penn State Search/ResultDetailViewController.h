@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (assign, nonatomic) NSInteger resultNumber;
+@property NSInteger resultNumber;
 
 @end
