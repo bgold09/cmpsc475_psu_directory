@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Building : NSObject <NSCoding>
+@interface BuildingInfo : NSObject <NSCoding>
 @property (readonly, strong, nonatomic) NSString *name;
 @property (readonly, strong, nonatomic) UIImage *image;
 @property (readonly) NSInteger buildingCode;

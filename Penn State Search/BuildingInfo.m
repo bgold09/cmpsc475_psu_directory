@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 BRIAN J GOLDEN. All rights reserved.
 //
 
-#import "Building.h"
+#import "BuildingInfo.h"
 
 static NSString * const kBuildingNameKey = @"buildingName";
 static NSString * const kImageKey = @"image";
@@ -15,7 +15,7 @@ static NSString * const kYearConstructedKey = @"yearConstructed";
 static NSString * const kLatitudeKey = @"latitude";
 static NSString * const  kLongtitudeKey = @"longitide";
 
-@interface Building ()
+@interface BuildingInfo ()
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) UIImage *image;
 @property NSInteger buildingCode;
@@ -25,7 +25,7 @@ static NSString * const  kLongtitudeKey = @"longitide";
 
 @end
 
-@implementation Building
+@implementation BuildingInfo
 
 - (id)initWithName:(NSString *)name buildingCode:(NSInteger)buildingCode yearConstructed:(NSInteger)yearConstructed latitude:(CGFloat)latitude longitude:(CGFloat)longitude photoNamed:(NSString *)photoFileName {
     self = [super init];

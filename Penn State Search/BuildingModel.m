@@ -7,7 +7,7 @@
 //
 
 #import "BuildingModel.h"
-#import "Building.h"
+#import "BuildingInfo.h"
 
 static NSString * const archiveFilename = @"buildings.archive";
 
@@ -44,7 +44,7 @@ static NSString * const archiveFilename = @"buildings.archive";
                 NSNumber *latitude = dict[@"latitude"];
                 NSNumber *longitude = dict[@"longitude"];
                 
-                Building *building = [[Building alloc] initWithName:dict[@"name"]
+                BuildingInfo *building = [[BuildingInfo alloc] initWithName:dict[@"name"]
                                                        buildingCode:[buildingCode integerValue]
                                                     yearConstructed:[year integerValue]
                                                            latitude:[latitude floatValue]
@@ -86,7 +86,7 @@ static NSString * const archiveFilename = @"buildings.archive";
 - (NSInteger)countWithImages {
     NSInteger count = 0;
     
-    for (Building *buildingInfo in self.buildingInfoArray) {
+    for (BuildingInfo *buildingInfo in self.buildingInfoArray) {
         
         if (buildingInfo.image) {
             count++;
@@ -113,19 +113,19 @@ static NSString * const archiveFilename = @"buildings.archive";
 }
 
 - (NSString *)nameForIndex:(NSInteger)index {
-    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
     NSString *name = buildingInfo.name;
     return name;
 }
 
 - (UIImage *)imageForIndex:(NSInteger)index {
-    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
     UIImage *image = buildingInfo.image;    
     return image;
 }
 
 - (BOOL)hasImageForIndex:(NSInteger)index {
-    Building *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
+    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
     UIImage *image = buildingInfo.image;
     
     if (image) {

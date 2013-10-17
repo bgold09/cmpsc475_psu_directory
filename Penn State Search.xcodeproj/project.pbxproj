@@ -35,7 +35,7 @@
 		C8EBB62017FCDFF800D3BC0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */; };
 		C8EBB62717FCE21B00D3BC0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB62517FCE21B00D3BC0A /* icon.png */; };
 		C8EBB62817FCE21B00D3BC0A /* icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EBB62617FCE21B00D3BC0A /* icon_retina.png */; };
-		C8FC7F11180DE78D00466B86 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FC7F10180DE78D00466B86 /* Building.m */; };
+		C8FC7F11180DE78D00466B86 /* BuildingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FC7F10180DE78D00466B86 /* BuildingInfo.m */; };
 		C8FE60A3180CA7A000CA31B2 /* agadmin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE6084180CA7A000CA31B2 /* agadmin.jpg */; };
 		C8FE60A4180CA7A000CA31B2 /* ageng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE6085180CA7A000CA31B2 /* ageng.jpg */; };
 		C8FE60A5180CA7A000CA31B2 /* appliedscience.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE6086180CA7A000CA31B2 /* appliedscience.jpg */; };
@@ -122,8 +122,8 @@
 		C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C8EBB62517FCE21B00D3BC0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C8EBB62617FCE21B00D3BC0A /* icon_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_retina.png; sourceTree = "<group>"; };
-		C8FC7F0F180DE78D00466B86 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Building.h; path = "Penn State Search/Building.h"; sourceTree = "<group>"; };
-		C8FC7F10180DE78D00466B86 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Building.m; path = "Penn State Search/Building.m"; sourceTree = "<group>"; };
+		C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildingInfo.h; path = "Penn State Search/BuildingInfo.h"; sourceTree = "<group>"; };
+		C8FC7F10180DE78D00466B86 /* BuildingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildingInfo.m; path = "Penn State Search/BuildingInfo.m"; sourceTree = "<group>"; };
 		C8FE6084180CA7A000CA31B2 /* agadmin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agadmin.jpg; sourceTree = "<group>"; };
 		C8FE6085180CA7A000CA31B2 /* ageng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ageng.jpg; sourceTree = "<group>"; };
 		C8FE6086180CA7A000CA31B2 /* appliedscience.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appliedscience.jpg; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
 				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
 				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
-				C8FC7F0F180DE78D00466B86 /* Building.h */,
-				C8FC7F10180DE78D00466B86 /* Building.m */,
+				C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */,
+				C8FC7F10180DE78D00466B86 /* BuildingInfo.m */,
 			);
 			name = Models;
 			path = ..;
@@ -474,7 +474,7 @@
 				C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */,
 				C89690C1180CB2F7008952FD /* PreferencesViewController.m in Sources */,
 				C89690C4180CB4CD008952FD /* Constants.m in Sources */,
-				C8FC7F11180DE78D00466B86 /* Building.m in Sources */,
+				C8FC7F11180DE78D00466B86 /* BuildingInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
