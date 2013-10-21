@@ -559,6 +559,7 @@
 		C87297FD17FBBD0F00F8F43A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Golden (34VJJ2N978)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Penn State Search/Penn State Search-Prefix.pch";
 				INFOPLIST_FILE = "Penn State Search/Penn State Search-Info.plist";
@@ -566,7 +567,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Penn State Search/ldap/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3BF2AFEC-B635-4483-A59E-CC62B5B24D3B";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/ldap/include";
 				WRAPPER_EXTENSION = app;
 			};
@@ -575,6 +578,7 @@
 		C87297FE17FBBD0F00F8F43A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brian Golden (34VJJ2N978)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Penn State Search/Penn State Search-Prefix.pch";
 				INFOPLIST_FILE = "Penn State Search/Penn State Search-Info.plist";
@@ -582,7 +586,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Penn State Search/ldap/lib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3BF2AFEC-B635-4483-A59E-CC62B5B24D3B";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/ldap/include";
 				WRAPPER_EXTENSION = app;
 			};
