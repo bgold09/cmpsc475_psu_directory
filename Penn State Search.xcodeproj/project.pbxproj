@@ -28,6 +28,8 @@
 		C89690C4180CB4CD008952FD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C3180CB4CD008952FD /* Constants.m */; };
 		C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */; };
 		C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C0E1DA1815E313007052E7 /* CoreData.framework */; };
+		C8C0E1E41815E3E5007052E7 /* MyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1E31815E3E5007052E7 /* MyDataManager.m */; };
+		C8C0E1E71815E4F7007052E7 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1E61815E4F7007052E7 /* Building.m */; };
 		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
 		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
@@ -120,6 +122,10 @@
 		C8C0E1DF1815E373007052E7 /* DataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		C8C0E1E01815E373007052E7 /* DataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		C8C0E1E11815E373007052E7 /* DataSourceCellConfigurer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSourceCellConfigurer.h; sourceTree = "<group>"; };
+		C8C0E1E21815E3E5007052E7 /* MyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataManager.h; sourceTree = "<group>"; };
+		C8C0E1E31815E3E5007052E7 /* MyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataManager.m; sourceTree = "<group>"; };
+		C8C0E1E51815E4F7007052E7 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		C8C0E1E61815E4F7007052E7 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
 		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
@@ -295,19 +301,23 @@
 		C89C77BE180740B900DF1556 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C8C0E1E51815E4F7007052E7 /* Building.h */,
+				C8C0E1E61815E4F7007052E7 /* Building.m */,
+				C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */,
+				C8FC7F10180DE78D00466B86 /* BuildingInfo.m */,
+				C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */,
+				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
+				C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */,
 				C8C0E1DC1815E373007052E7 /* DataManager.h */,
 				C8C0E1DD1815E373007052E7 /* DataManager.m */,
 				C8C0E1DE1815E373007052E7 /* DataManagerDelegate.h */,
 				C8C0E1DF1815E373007052E7 /* DataSource.h */,
 				C8C0E1E01815E373007052E7 /* DataSource.m */,
 				C8C0E1E11815E373007052E7 /* DataSourceCellConfigurer.h */,
-				C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */,
-				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
 				C8EBB61817FCA3F400D3BC0A /* DirectoryModel.h */,
 				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
-				C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */,
-				C8FC7F10180DE78D00466B86 /* BuildingInfo.m */,
-				C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */,
+				C8C0E1E21815E3E5007052E7 /* MyDataManager.h */,
+				C8C0E1E31815E3E5007052E7 /* MyDataManager.m */,
 			);
 			name = Models;
 			path = ..;
@@ -495,6 +505,8 @@
 				C89690C4180CB4CD008952FD /* Constants.m in Sources */,
 				C8FC7F11180DE78D00466B86 /* BuildingInfo.m in Sources */,
 				C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */,
+				C8C0E1E41815E3E5007052E7 /* MyDataManager.m in Sources */,
+				C8C0E1E71815E4F7007052E7 /* Building.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
