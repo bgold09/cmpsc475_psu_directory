@@ -99,7 +99,17 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
-        NSInteger buildingNumber = self.tableView.indexPathForSelectedRow.row;
+        NSInteger buildingNumber;
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
+        
+        if ([showAllBuildings boolValue]) {
+            buildingNumber = self.tableView.indexPathForSelectedRow.row;
+        } else {
+            buildingNumber =
+                [self.model indexForBuildingWithImageNumber:self.tableView.indexPathForSelectedRow.row];
+        }
+        
         BuildingImageViewController *imageViewController = segue.destinationViewController;
         imageViewController.buildingNumber = buildingNumber;
         imageViewController.buildingName = [self.model nameForIndex:buildingNumber];
