@@ -26,6 +26,8 @@
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
 		C89690C1180CB2F7008952FD /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C0180CB2F7008952FD /* PreferencesViewController.m */; };
 		C89690C4180CB4CD008952FD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C3180CB4CD008952FD /* Constants.m */; };
+		C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */; };
+		C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C0E1DA1815E313007052E7 /* CoreData.framework */; };
 		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
 		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
@@ -110,6 +112,8 @@
 		C89690C0180CB2F7008952FD /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		C89690C2180CB4CD008952FD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C89690C3180CB4CD008952FD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C8C0E1D81815E284007052E7 /* Buildings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Buildings.xcdatamodel; sourceTree = "<group>"; };
+		C8C0E1DA1815E313007052E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */,
 				C87297DD17FBBD0F00F8F43A /* UIKit.framework in Frameworks */,
 				C87297DF17FBBD0F00F8F43A /* Foundation.framework in Frameworks */,
 				C87297E117FBBD0F00F8F43A /* CoreGraphics.framework in Frameworks */,
@@ -182,6 +187,7 @@
 		C87297D017FBBD0F00F8F43A = {
 			isa = PBXGroup;
 			children = (
+				C8C0E1DA1815E313007052E7 /* CoreData.framework */,
 				C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */,
 				C8EBB62517FCE21B00D3BC0A /* icon.png */,
 				C8EBB62617FCE21B00D3BC0A /* icon_retina.png */,
@@ -289,6 +295,7 @@
 				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
 				C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */,
 				C8FC7F10180DE78D00466B86 /* BuildingInfo.m */,
+				C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */,
 			);
 			name = Models;
 			path = ..;
@@ -475,6 +482,7 @@
 				C89690C1180CB2F7008952FD /* PreferencesViewController.m in Sources */,
 				C89690C4180CB4CD008952FD /* Constants.m in Sources */,
 				C8FC7F11180DE78D00466B86 /* BuildingInfo.m in Sources */,
+				C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +624,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C8C0E1D81815E284007052E7 /* Buildings.xcdatamodel */,
+			);
+			currentVersion = C8C0E1D81815E284007052E7 /* Buildings.xcdatamodel */;
+			path = Buildings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C87297D117FBBD0F00F8F43A /* Project object */;
 }
