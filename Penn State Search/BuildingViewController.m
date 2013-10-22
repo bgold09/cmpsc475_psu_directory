@@ -46,11 +46,23 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, UITextAttributeFont, nil];
     [self.settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadBuildingData:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    [self reloadBuildingData:nil];
+}
+
+- (void)reloadBuildingData:(NSNotification *)notification {
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
     

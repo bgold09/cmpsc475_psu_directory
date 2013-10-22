@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */; };
+		C857B6C01817163E000BAC8F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C857B6BF1817163E000BAC8F /* Settings.bundle */; };
 		C87297DD17FBBD0F00F8F43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297DC17FBBD0F00F8F43A /* UIKit.framework */; };
 		C87297DF17FBBD0F00F8F43A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297DE17FBBD0F00F8F43A /* Foundation.framework */; };
 		C87297E117FBBD0F00F8F43A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297E017FBBD0F00F8F43A /* CoreGraphics.framework */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDetailViewController.h; sourceTree = "<group>"; };
 		C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDetailViewController.m; sourceTree = "<group>"; };
+		C857B6BF1817163E000BAC8F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C87297D917FBBD0F00F8F43A /* Penn State Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penn State Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87297DC17FBBD0F00F8F43A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C87297DE17FBBD0F00F8F43A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -245,6 +247,7 @@
 		C87297E317FBBD0F00F8F43A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C857B6BF1817163E000BAC8F /* Settings.bundle */,
 				C8FE60C4180CA7BF00CA31B2 /* Buildings */,
 				C8EB878A180776640009CA36 /* 06-magnify.png */,
 				C8EB8788180776570009CA36 /* 07-map-marker.png */,
@@ -483,6 +486,7 @@
 				C8FE60C0180CA7A000CA31B2 /* engunit.jpg in Resources */,
 				C8FE60C1180CA7A000CA31B2 /* smeal.jpg in Resources */,
 				C8FE60C3180CA7AB00CA31B2 /* buildings.plist in Resources */,
+				C857B6C01817163E000BAC8F /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

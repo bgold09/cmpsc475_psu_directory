@@ -10,7 +10,7 @@
 
 @implementation Constants
 
-NSString * const kAllowZooming = @"zoom";
+NSString * const kAllowZooming = @"allowZooming";
 NSString * const kShowAllBuildings = @"showAllBuildings";
 
 @end

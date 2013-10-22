@@ -44,18 +44,46 @@
     
     [self.scrollView zoomToRect:self.buildingImageView.bounds animated:NO];
     self.title = self.building.name;
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setZooming:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setZooming:nil];
+}
+
+- (void)setZooming:(NSNotification *)notification {
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSNumber *boolAllowZooming = [preferences objectForKey:kAllowZooming];
     
     if (![boolAllowZooming boolValue]) {
         [self lockZoom];
+    } else {
+        [self unlockZoom];
     }
 }
 
 -(void)lockZoom {
     self.scrollView.maximumZoomScale = 1.0;
     self.scrollView.minimumZoomScale = 1.0;
+}
+
+- (void)unlockZoom {
+    self.scrollView.contentSize = self.buildingImageView.image.size;
+    self.scrollView.maximumZoomScale = 2.0;
+    self.scrollView.frame = self.view.frame;
+    self.scrollView.minimumZoomScale = self.scrollView.bounds.size.width / self.buildingImageView.image.size.width;
+    self.scrollView.bounces = YES;
+    self.scrollView.bouncesZoom = NO;
+    [self.scrollView zoomToRect:self.buildingImageView.bounds animated:NO];
 }
 
 #pragma mark - ScrollView Delegate
