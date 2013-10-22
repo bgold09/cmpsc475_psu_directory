@@ -53,15 +53,14 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
-    NSPredicate *predicate;
     
     if (![showAllBuildings boolValue]) {
-        predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
+        [self.dataSource updateWithPredicate:predicate];
     } else {
-        predicate = [NSPredicate predicateWithFormat:nil];
+        [self.dataSource updateWithPredicate:nil];
     }
     
-    [self.dataSource updateWithPredicate:predicate];
     [self.tableView reloadData];
 }
 
@@ -69,15 +68,12 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 - (NSString *)cellIdentifierForObject:(id)object {
     Building *building = object;
-    NSString *cellIdentifier;
     
     if (building.image) {
-        cellIdentifier = CellIndentifierWithImage;
-    } else {
-        cellIdentifier = CellIdentifierWithoutImage;
+        return CellIndentifierWithImage;
     }
     
-    return cellIdentifier;
+    return CellIdentifierWithoutImage;
 }
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(id)object {

@@ -18,15 +18,6 @@
 
 @implementation PreferencesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,7 +29,6 @@
 }
 
 - (IBAction)dismissPressed:(id)sender {
-    
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     [preferences setBool:self.zoomSwitch.on forKey:kAllowZooming];
     [preferences setBool:self.showImagesSwitch.on forKey:kShowAllBuildings];

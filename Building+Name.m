@@ -9,6 +9,7 @@
 #import "Building+Name.h"
 
 @implementation Building (Name)
+
 - (NSString *)firstLetterOfName {
     NSString *letter = [self.name substringToIndex:1];
     NSScanner *scanner = [NSScanner scannerWithString:letter];
