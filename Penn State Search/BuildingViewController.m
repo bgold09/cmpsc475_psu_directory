@@ -58,7 +58,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     if (![showAllBuildings boolValue]) {
         predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
     } else {
-        predicate = [NSPredicate predicateWithFormat:@"image <> nil OR image = nil"];
+        predicate = [NSPredicate predicateWithFormat:nil];
     }
     
     [self.dataSource updateWithPredicate:predicate];
