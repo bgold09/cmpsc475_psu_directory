@@ -7,11 +7,10 @@
 //
 
 #import "BuildingImageViewController.h"
-#import "BuildingModel.h"
+#import "Building.h"
 #import "Constants.h"
 
 @interface BuildingImageViewController ()
-@property (strong, nonatomic) BuildingModel *model;
 @property (strong, nonatomic) UIImageView *buildingImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -22,7 +21,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        _model = [BuildingModel sharedInstance];
+
     }
     return self;
 }
@@ -30,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *image = [self.model imageForName:self.buildingName];
+    NSData *imageData = self.building.image;
+    UIImage *image = [UIImage imageWithData:imageData];
     _buildingImageView = [[UIImageView alloc] initWithImage:image];
     [self.scrollView addSubview:self.buildingImageView];
     
@@ -43,7 +43,7 @@
     self.scrollView.delegate = self;
     
     [self.scrollView zoomToRect:self.buildingImageView.bounds animated:NO];
-    self.title = self.buildingName;
+    self.title = self.building.name;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSNumber *boolAllowZooming = [preferences objectForKey:kAllowZooming];

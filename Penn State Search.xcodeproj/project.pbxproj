@@ -75,7 +75,6 @@
 		C8FE60C0180CA7A000CA31B2 /* engunit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60A1180CA7A000CA31B2 /* engunit.jpg */; };
 		C8FE60C1180CA7A000CA31B2 /* smeal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60A2180CA7A000CA31B2 /* smeal.jpg */; };
 		C8FE60C3180CA7AB00CA31B2 /* buildings.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FE60C2180CA7AB00CA31B2 /* buildings.plist */; };
-		C8FE60C8180CA97F00CA31B2 /* BuildingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,8 +176,6 @@
 		C8FE60A1180CA7A000CA31B2 /* engunit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = engunit.jpg; sourceTree = "<group>"; };
 		C8FE60A2180CA7A000CA31B2 /* smeal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smeal.jpg; sourceTree = "<group>"; };
 		C8FE60C2180CA7AB00CA31B2 /* buildings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = buildings.plist; path = "Penn State Search/buildings.plist"; sourceTree = SOURCE_ROOT; };
-		C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BuildingModel.h; path = "Penn State Search/BuildingModel.h"; sourceTree = "<group>"; };
-		C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BuildingModel.m; path = "Penn State Search/BuildingModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,8 +307,6 @@
 				C8C0E1E61815E4F7007052E7 /* Building.m */,
 				C8FC7F0F180DE78D00466B86 /* BuildingInfo.h */,
 				C8FC7F10180DE78D00466B86 /* BuildingInfo.m */,
-				C8FE60C5180CA94D00CA31B2 /* BuildingModel.h */,
-				C8FE60C6180CA94D00CA31B2 /* BuildingModel.m */,
 				C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */,
 				C8C0E1DC1815E373007052E7 /* DataManager.h */,
 				C8C0E1DD1815E373007052E7 /* DataManager.m */,
@@ -500,7 +495,6 @@
 			files = (
 				C8C0E1E81815EA24007052E7 /* DataManager.m in Sources */,
 				C8C0E1E91815EA24007052E7 /* DataSource.m in Sources */,
-				C8FE60C8180CA97F00CA31B2 /* BuildingModel.m in Sources */,
 				C87297E917FBBD0F00F8F43A /* main.m in Sources */,
 				C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */,
 				C87297F917FBBD0F00F8F43A /* SearchViewController.m in Sources */,

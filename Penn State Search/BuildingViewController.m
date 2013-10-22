@@ -8,7 +8,6 @@
 
 #import "BuildingViewController.h"
 #import "BuildingImageViewController.h"
-#import "BuildingModel.h"
 #import "MyDataManager.h"
 #import "DataSource.h"
 #import "Building.h"
@@ -20,7 +19,6 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 @interface BuildingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
-@property (strong, nonatomic) BuildingModel *model;
 @property (strong, nonatomic) DataSource *dataSource;
 
 @end
@@ -29,14 +27,11 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    if (self) {
-        _model = [BuildingModel sharedInstance];
-        
+    if (self) {        
         MyDataManager *myDataManager = [[MyDataManager alloc] init];
         _dataSource = [[DataSource alloc] initForEntity:@"Building" sortKeys:@[@"name"] predicate:nil sectionNameKeyPath:@"firstLetterOfName" dataManagerDelegate:myDataManager];
         
         _dataSource.delegate = self;
-        
     }
     return self;
 }
@@ -109,9 +104,8 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
         BuildingImageViewController *imageViewController = segue.destinationViewController;
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
-        NSString *buildingName = cell.textLabel.text;
-        imageViewController.buildingName = buildingName;
+        Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        imageViewController.building = building;
     }
 }
 
