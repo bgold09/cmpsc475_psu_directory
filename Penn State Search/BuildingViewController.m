@@ -60,7 +60,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
     NSPredicate *predicate;
     
-    if ([showAllBuildings boolValue]) {
+    if (![showAllBuildings boolValue]) {
         predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
     } else {
         predicate = [NSPredicate predicateWithFormat:@"image <> nil OR image = nil"];
@@ -108,20 +108,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
-        NSInteger buildingNumber;
-        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-        NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
-
-        if ([showAllBuildings boolValue]) {
-            buildingNumber = self.tableView.indexPathForSelectedRow.row;
-        } else {
-            buildingNumber =
-                [self.model indexForBuildingWithImageNumber:self.tableView.indexPathForSelectedRow.row];
-        }
-        
         BuildingImageViewController *imageViewController = segue.destinationViewController;
-        imageViewController.buildingNumber = buildingNumber;
-        
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
         NSString *buildingName = cell.textLabel.text;
         imageViewController.buildingName = buildingName;

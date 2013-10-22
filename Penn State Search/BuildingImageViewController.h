@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BuildingImageViewController : UIViewController <UIScrollViewDelegate>
-@property NSInteger buildingNumber;
 @property (strong, nonatomic) NSString *buildingName;
 
 @end

@@ -14,7 +14,7 @@
 static NSString * const archiveFilename = @"buildings.archive";
 
 @interface BuildingModel ()
-@property (strong, nonatomic) NSMutableArray *buildingInfoArray;
+@property (strong, nonatomic) NSMutableArray *buildingArray;
 
 @end
 
@@ -36,7 +36,7 @@ static NSString * const archiveFilename = @"buildings.archive";
         dataManager.delegate = myDataManager;
         
         NSArray *results = [dataManager fetchManagedObjectsForEntity:@"Building" sortKeys:@[@"name"] predicate:nil];
-        self.buildingInfoArray = [results mutableCopy];
+        _buildingArray = [results mutableCopy];
     }
     return self;
 }
@@ -44,13 +44,13 @@ static NSString * const archiveFilename = @"buildings.archive";
 #pragma mark - Public Methods
 
 - (NSInteger)count {
-    return self.buildingInfoArray.count;
+    return self.buildingArray.count;
 }
 
 - (NSInteger)countWithImages {
     NSInteger count = 0;
     
-    for (Building *building in self.buildingInfoArray) {
+    for (Building *building in self.buildingArray) {
         
         if (building.image) {
             count++;
@@ -60,48 +60,10 @@ static NSString * const archiveFilename = @"buildings.archive";
     return count;
 }
 
-- (NSInteger)indexForBuildingWithImageNumber:(NSInteger)index {
-    NSInteger count = 0;
-        
-    for (NSInteger buildingIndex = 0; buildingIndex < [self.buildingInfoArray count]; buildingIndex++) {
-        if ([self hasImageForIndex:buildingIndex]) {
-            count++;
-        }
-        
-        if (count - 1 == index) {
-            return buildingIndex;
-        }
-    }
-    
-    return 0;
-}
-
-- (NSString *)nameForIndex:(NSInteger)index {
-    Building *building = [self.buildingInfoArray objectAtIndex:index];
-    NSString *name = building.name;
-    return name;
-}
-
-- (UIImage *)imageForIndex:(NSInteger)index {
-    Building *building = [self.buildingInfoArray objectAtIndex:index];
-    UIImage *image = [[UIImage alloc] initWithData:building.image];
-    return image;
-}
-
-- (BOOL)hasImageForIndex:(NSInteger)index {
-    Building *building = [self.buildingInfoArray objectAtIndex:index];
-    UIImage *image = [[UIImage alloc] initWithData:building.image];
-    
-    if (image) {
-        return YES;
-    }
-    
-    return NO;
-}
 
 - (BOOL)hasImageForName:(NSString *)name {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@", name];
-    NSArray *result = [self.buildingInfoArray filteredArrayUsingPredicate:predicate];
+    NSArray *result = [self.buildingArray filteredArrayUsingPredicate:predicate];
     Building *building = [result objectAtIndex:0];
     
     if (building.image) {
@@ -113,7 +75,7 @@ static NSString * const archiveFilename = @"buildings.archive";
 
 - (UIImage *)imageForName:(NSString *)name {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@", name];
-    NSArray *result = [self.buildingInfoArray filteredArrayUsingPredicate:predicate];
+    NSArray *result = [self.buildingArray filteredArrayUsingPredicate:predicate];
     Building *building = [result objectAtIndex:0];
     UIImage *image = [[UIImage alloc] initWithData:building.image];
     return image;
