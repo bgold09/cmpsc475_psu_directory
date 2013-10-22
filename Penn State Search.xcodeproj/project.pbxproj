@@ -204,7 +204,6 @@
 		C87297D017FBBD0F00F8F43A = {
 			isa = PBXGroup;
 			children = (
-				C8C0E1DA1815E313007052E7 /* CoreData.framework */,
 				C8EBB61F17FCDFF800D3BC0A /* Default-568h@2x.png */,
 				C8EBB62517FCE21B00D3BC0A /* icon.png */,
 				C8EBB62617FCE21B00D3BC0A /* icon_retina.png */,
@@ -226,6 +225,7 @@
 		C87297DB17FBBD0F00F8F43A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8C0E1DA1815E313007052E7 /* CoreData.framework */,
 				C87297DC17FBBD0F00F8F43A /* UIKit.framework */,
 				C87297DE17FBBD0F00F8F43A /* Foundation.framework */,
 				C87297E017FBBD0F00F8F43A /* CoreGraphics.framework */,
