@@ -10,12 +10,12 @@
 #import "DataManager.h"
 #import "Building.h"
 
-static NSString * const kBuildingNameKey = @"buildingName";
-static NSString * const kImageKey = @"image";
-static NSString * const kBuildingCodeKey = @"buildingCode";
-static NSString * const kYearConstructedKey = @"yearConstructed";
+static NSString * const kBuildingNameKey = @"name";
+static NSString * const kImageKey = @"photo";
+static NSString * const kBuildingCodeKey = @"opp_bldg_code";
+static NSString * const kYearConstructedKey = @"year_constructed";
 static NSString * const kLatitudeKey = @"latitude";
-static NSString * const kLongtitudeKey = @"longitide";
+static NSString * const kLongtitudeKey = @"longitude";
 
 @implementation MyDataManager
 
@@ -39,10 +39,12 @@ static NSString * const kLongtitudeKey = @"longitide";
         building.latitude = [dict objectForKey:kLatitudeKey];
         building.longitude = [dict objectForKey:kLongtitudeKey];
         
-        
-        NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:[dict objectForKey:@"photo"] ofType:@"jpg"];
-        UIImage *buildingImage = [UIImage imageWithContentsOfFile:imageFilePath];
-        building.image = UIImagePNGRepresentation(buildingImage);
+        NSString *imageName = [dict objectForKey:kImageKey];
+        if (imageName.length > 0) {
+            NSString *imageFilePath = [[NSBundle mainBundle] pathForResource:[dict objectForKey:@"photo"] ofType:@"jpg"];
+            UIImage *buildingImage = [UIImage imageWithContentsOfFile:imageFilePath];
+            building.image = UIImagePNGRepresentation(buildingImage);
+        }
     }
     
     [dataManager saveContext];

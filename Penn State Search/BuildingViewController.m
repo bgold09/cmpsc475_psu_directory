@@ -9,6 +9,9 @@
 #import "BuildingViewController.h"
 #import "BuildingImageViewController.h"
 #import "BuildingModel.h"
+#import "MyDataManager.h"
+#import "DataSource.h"
+#import "Building.h"
 #import "Constants.h"
 
 static NSString * const CellIndentifierWithImage = @"CellWithImage";
@@ -18,6 +21,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) BuildingModel *model;
+@property (strong, nonatomic) DataSource *dataSource;
 
 @end
 
@@ -27,6 +31,12 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     self = [super initWithCoder:aDecoder];
     if (self) {
         _model = [BuildingModel sharedInstance];
+        
+        MyDataManager *myDataManager = [[MyDataManager alloc] init];
+        _dataSource = [[DataSource alloc] initForEntity:@"Building" sortKeys:@[@"name"] predicate:nil sectionNameKeyPath:@"firstLetterOfName" dataManagerDelegate:myDataManager];
+        
+        _dataSource.delegate = self;
+        
     }
     return self;
 }
@@ -34,7 +44,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.dataSource = self;
+    self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
     
     self.settingsButton.title = @"\u2699";
@@ -44,45 +54,44 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
+    NSPredicate *predicate;
+    
+    if ([showAllBuildings boolValue]) {
+        predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
+    } else {
+        predicate = [NSPredicate predicateWithFormat:@"image <> nil OR image = nil"];
+    }
+    
+    [self.dataSource updateWithPredicate:predicate];
     [self.tableView reloadData];
 }
 
-#pragma mark - Data Source
+#pragma mark - Data Source Cell Configurer
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
-    return [showAllBuildings boolValue] ? [self.model count] : [self.model countWithImages];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)cellIdentifierForObject:(id)object {
+    Building *building = object;
     NSString *cellIdentifier;
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
-    
-    NSInteger index;
-    
-    if ([showAllBuildings boolValue]) {
-        index = indexPath.row;
-    } else {
-        index = [self.model indexForBuildingWithImageNumber:indexPath.row];
-    }
-    
-    if (![showAllBuildings boolValue] || [self.model hasImageForIndex:index]) {
+    if (building.image) {
         cellIdentifier = CellIndentifierWithImage;
     } else {
         cellIdentifier = CellIdentifierWithoutImage;
     }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = [self.model nameForIndex:index];
-    
-    return cell;
+    return cellIdentifier;
+}
+
+- (void)configureCell:(UITableViewCell *)cell withObject:(id)object {
+    Building *building = object;
+    cell.textLabel.text = building.name;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
 }
 
 #pragma mark - Table View Delegate
@@ -102,7 +111,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
         NSInteger buildingNumber;
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
         NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
-        
+
         if ([showAllBuildings boolValue]) {
             buildingNumber = self.tableView.indexPathForSelectedRow.row;
         } else {
@@ -112,7 +121,10 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
         
         BuildingImageViewController *imageViewController = segue.destinationViewController;
         imageViewController.buildingNumber = buildingNumber;
-        imageViewController.buildingName = [self.model nameForIndex:buildingNumber];
+        
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
+        NSString *buildingName = cell.textLabel.text;
+        imageViewController.buildingName = buildingName;
     }
 }
 

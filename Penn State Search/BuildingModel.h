@@ -16,4 +16,6 @@
 - (NSString *)nameForIndex:(NSInteger)index;
 - (UIImage *)imageForIndex:(NSInteger)index;
 - (BOOL)hasImageForIndex:(NSInteger)index;
+- (BOOL)hasImageForName:(NSString *)name;
+- (UIImage *)imageForName:(NSString *)name;
 @end

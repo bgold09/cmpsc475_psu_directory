@@ -30,6 +30,9 @@
 		C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C0E1DA1815E313007052E7 /* CoreData.framework */; };
 		C8C0E1E41815E3E5007052E7 /* MyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1E31815E3E5007052E7 /* MyDataManager.m */; };
 		C8C0E1E71815E4F7007052E7 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1E61815E4F7007052E7 /* Building.m */; };
+		C8C0E1E81815EA24007052E7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1DD1815E373007052E7 /* DataManager.m */; };
+		C8C0E1E91815EA24007052E7 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1E01815E373007052E7 /* DataSource.m */; };
+		C8C0E1EC1815F263007052E7 /* Building+Name.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1EB1815F263007052E7 /* Building+Name.m */; };
 		C8EB870518074A200009CA36 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB870418074A200009CA36 /* BuildingViewController.m */; };
 		C8EB8787180757180009CA36 /* BuildingImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB8786180757180009CA36 /* BuildingImageViewController.m */; };
 		C8EB8789180776570009CA36 /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C8EB8788180776570009CA36 /* 07-map-marker.png */; };
@@ -126,6 +129,8 @@
 		C8C0E1E31815E3E5007052E7 /* MyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataManager.m; sourceTree = "<group>"; };
 		C8C0E1E51815E4F7007052E7 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
 		C8C0E1E61815E4F7007052E7 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
+		C8C0E1EA1815F262007052E7 /* Building+Name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Building+Name.h"; sourceTree = "<group>"; };
+		C8C0E1EB1815F263007052E7 /* Building+Name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Building+Name.m"; sourceTree = "<group>"; };
 		C8EB870318074A200009CA36 /* BuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingViewController.h; sourceTree = "<group>"; };
 		C8EB870418074A200009CA36 /* BuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingViewController.m; sourceTree = "<group>"; };
 		C8EB8785180757180009CA36 /* BuildingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingImageViewController.h; sourceTree = "<group>"; };
@@ -318,6 +323,8 @@
 				C8EBB61917FCA3F400D3BC0A /* DirectoryModel.m */,
 				C8C0E1E21815E3E5007052E7 /* MyDataManager.h */,
 				C8C0E1E31815E3E5007052E7 /* MyDataManager.m */,
+				C8C0E1EA1815F262007052E7 /* Building+Name.h */,
+				C8C0E1EB1815F263007052E7 /* Building+Name.m */,
 			);
 			name = Models;
 			path = ..;
@@ -491,6 +498,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C0E1E81815EA24007052E7 /* DataManager.m in Sources */,
+				C8C0E1E91815EA24007052E7 /* DataSource.m in Sources */,
 				C8FE60C8180CA97F00CA31B2 /* BuildingModel.m in Sources */,
 				C87297E917FBBD0F00F8F43A /* main.m in Sources */,
 				C87297ED17FBBD0F00F8F43A /* AppDelegate.m in Sources */,
@@ -507,6 +516,7 @@
 				C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */,
 				C8C0E1E41815E3E5007052E7 /* MyDataManager.m in Sources */,
 				C8C0E1E71815E4F7007052E7 /* Building.m in Sources */,
+				C8C0E1EC1815F263007052E7 /* Building+Name.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *image = [self.model imageForIndex:self.buildingNumber];
+    //UIImage *image = [self.model imageForIndex:self.buildingNumber];
+    UIImage *image = [self.model imageForName:self.buildingName];
     _buildingImageView = [[UIImageView alloc] initWithImage:image];
     [self.scrollView addSubview:self.buildingImageView];
     

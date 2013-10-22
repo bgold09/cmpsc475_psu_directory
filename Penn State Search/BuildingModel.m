@@ -7,7 +7,9 @@
 //
 
 #import "BuildingModel.h"
-#import "BuildingInfo.h"
+#import "DataManager.h"
+#import "MyDataManager.h"
+#import "Building.h"
 
 static NSString * const archiveFilename = @"buildings.archive";
 
@@ -29,51 +31,14 @@ static NSString * const archiveFilename = @"buildings.archive";
 - (id)init {
     self = [super init];
     if (self) {
+        DataManager *dataManager = [DataManager sharedInstance];
+        MyDataManager *myDataManager = [[MyDataManager alloc] init];
+        dataManager.delegate = myDataManager;
         
-        if ([self fileExists]) {
-            NSString *archiveFilePath = [self archiveFilePath];
-            _buildingInfoArray = [NSKeyedUnarchiver unarchiveObjectWithFile:archiveFilePath];
-        } else {
-            NSMutableArray *buildings = [self allBuildingInfo];
-            
-            _buildingInfoArray = [NSMutableArray array];
-            for (NSDictionary *dict in buildings) {
-                NSNumber *buildingCode = dict[@"opp_bldg_code"];
-                NSNumber *year = dict[@"year_constructed"];
-                NSNumber *latitude = dict[@"latitude"];
-                NSNumber *longitude = dict[@"longitude"];
-                
-                BuildingInfo *building = [[BuildingInfo alloc] initWithName:dict[@"name"]
-                                                       buildingCode:[buildingCode integerValue]
-                                                    yearConstructed:[year integerValue]
-                                                           latitude:[latitude floatValue]
-                                                          longitude:[longitude floatValue]
-                                                         photoNamed:dict[@"photo"]];
-                
-                [_buildingInfoArray addObject:building];
-            }
-            
-            [NSKeyedArchiver archiveRootObject:_buildingInfoArray toFile:[self archiveFilePath]];
-        }
-        
-        [self sortByBuildingName];
+        NSArray *results = [dataManager fetchManagedObjectsForEntity:@"Building" sortKeys:@[@"name"] predicate:nil];
+        self.buildingInfoArray = [results mutableCopy];
     }
     return self;
-}
-
-#pragma mark - File System
-
-- (NSString *)applicationDocumentsDirectory {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
-- (NSString *)archiveFilePath {
-    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:archiveFilename];
-}
-
-- (BOOL)fileExists {
-    NSString *archiveFilePath = [self archiveFilePath];
-    return [[NSFileManager defaultManager] fileExistsAtPath:archiveFilePath];
 }
 
 #pragma mark - Public Methods
@@ -85,9 +50,9 @@ static NSString * const archiveFilename = @"buildings.archive";
 - (NSInteger)countWithImages {
     NSInteger count = 0;
     
-    for (BuildingInfo *buildingInfo in self.buildingInfoArray) {
+    for (Building *building in self.buildingInfoArray) {
         
-        if (buildingInfo.image) {
+        if (building.image) {
             count++;
         }
     }
@@ -112,20 +77,20 @@ static NSString * const archiveFilename = @"buildings.archive";
 }
 
 - (NSString *)nameForIndex:(NSInteger)index {
-    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
-    NSString *name = buildingInfo.name;
+    Building *building = [self.buildingInfoArray objectAtIndex:index];
+    NSString *name = building.name;
     return name;
 }
 
 - (UIImage *)imageForIndex:(NSInteger)index {
-    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
-    UIImage *image = buildingInfo.image;    
+    Building *building = [self.buildingInfoArray objectAtIndex:index];
+    UIImage *image = [[UIImage alloc] initWithData:building.image];
     return image;
 }
 
 - (BOOL)hasImageForIndex:(NSInteger)index {
-    BuildingInfo *buildingInfo = [self.buildingInfoArray objectAtIndex:index];
-    UIImage *image = buildingInfo.image;
+    Building *building = [self.buildingInfoArray objectAtIndex:index];
+    UIImage *image = [[UIImage alloc] initWithData:building.image];
     
     if (image) {
         return YES;
@@ -134,18 +99,24 @@ static NSString * const archiveFilename = @"buildings.archive";
     return NO;
 }
 
-#pragma mark - Private Methods
-
-- (void)sortByBuildingName {
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    [self.buildingInfoArray sortUsingDescriptors:@[sortDescriptor]];
+- (BOOL)hasImageForName:(NSString *)name {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@", name];
+    NSArray *result = [self.buildingInfoArray filteredArrayUsingPredicate:predicate];
+    Building *building = [result objectAtIndex:0];
     
+    if (building.image) {
+        return YES;
+    }
+    
+    return NO;
 }
 
-- (NSMutableArray *)allBuildingInfo {
-    NSString *buildingInfoFilePath = [[NSBundle mainBundle] pathForResource:@"buildings" ofType:@".plist"];
-    NSMutableArray *buildingInfo = [[NSMutableArray alloc] initWithContentsOfFile:buildingInfoFilePath];
-    return buildingInfo;
+- (UIImage *)imageForName:(NSString *)name {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@", name];
+    NSArray *result = [self.buildingInfoArray filteredArrayUsingPredicate:predicate];
+    Building *building = [result objectAtIndex:0];
+    UIImage *image = [[UIImage alloc] initWithData:building.image];
+    return image;
 }
 
 @end
