@@ -227,8 +227,7 @@
                     <connections>
                         <outlet property="settingsButton" destination="Q72-u6-XJH" id="eRl-OO-szx"/>
                         <outlet property="tableView" destination="UVJ-Pq-dAP" id="Rnr-DL-xe9"/>
-                        <segue destination="PL1-wY-f3K" kind="push" identifier="BuildingImageSegue" id="8ox-fB-nxn"/>
-                        <segue destination="LGC-BA-PSb" kind="push" identifier="BuildingInfoSegue" id="3vP-Ed-wpN"/>
+                        <segue destination="LGC-BA-PSb" kind="push" identifier="BuildingTextSegue" id="tKu-sZ-SFy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ks8-Db-olH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="-648" y="334"/>
         </scene>
-        <!--Building Info View Controller-->
+        <!--Building Text View Controller-->
         <scene sceneID="x4r-kl-wFP">
             <objects>
-                <viewController id="LGC-BA-PSb" customClass="BuildingInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuildingTextViewController" id="LGC-BA-PSb" customClass="BuildingTextViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ljd-w4-2mp">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -327,7 +326,13 @@
                             <constraint firstItem="FVw-eS-KSb" firstAttribute="leading" secondItem="Ljd-w4-2mp" secondAttribute="leading" type="default" id="u7E-FQ-Dev"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A98-L1-w7Y"/>
+                    <navigationItem key="navigationItem" id="A98-L1-w7Y">
+                        <barButtonItem key="rightBarButtonItem" title="Photo" id="kbR-qm-uuW">
+                            <connections>
+                                <segue destination="PL1-wY-f3K" kind="push" identifier="BuildingImageSegue" id="Y89-ja-o2L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="infoTextView" destination="FVw-eS-KSb" id="VBd-wy-rG5"/>
                     </connections>
@@ -402,13 +407,13 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="158" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="158"/>
+                                        <rect key="frame" x="0.0" y="179" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="31" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -506,8 +511,8 @@
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
-        <class className="BuildingInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingInfoViewController.h"/>
+        <class className="BuildingTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingTextViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="infoTextView" candidateClass="UITextView"/>
             </relationships>

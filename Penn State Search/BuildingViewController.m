@@ -8,6 +8,7 @@
 
 #import "BuildingViewController.h"
 #import "BuildingImageViewController.h"
+#import "BuildingTextViewController.h"
 #import "MyDataManager.h"
 #import "DataSource.h"
 #import "Building.h"
@@ -100,11 +101,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 #pragma mark - Table View Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if ([cell.reuseIdentifier isEqualToString:CellIndentifierWithImage]) {
-        [self performSegueWithIdentifier:@"BuildingImageSegue" sender:self];
-    }
+    [self performSegueWithIdentifier:@"BuildingTextSegue" sender:self];
 }
 
 #pragma mark - Segues
@@ -114,6 +111,10 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
         BuildingImageViewController *imageViewController = segue.destinationViewController;
         Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
         imageViewController.building = building;
+    } else if ([segue.identifier isEqualToString:@"BuildingTextSegue"]) {
+        BuildingTextViewController *infoViewController = segue.destinationViewController;
+        Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        infoViewController.building = building;
     }
 }
 

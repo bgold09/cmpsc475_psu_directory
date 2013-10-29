@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Building.h"
 
-@interface BuildingInfoViewController : UIViewController
+@interface BuildingTextViewController : UIViewController
 @property (strong, nonatomic) Building *building;
 
 @end
