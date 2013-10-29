@@ -3,12 +3,13 @@
     <entity name="Building" representedClassName="Building" syncable="YES">
         <attribute name="buildingCode" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="yearConstructed" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Building" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Building" positionX="160" positionY="192" width="128" height="150"/>
     </elements>
 </model>

@@ -17,5 +17,6 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic image;
+@dynamic info;
 
 @end

@@ -38,6 +38,7 @@ static NSString * const kLongtitudeKey = @"longitude";
         building.yearConstructed = [dict objectForKey:kYearConstructedKey];
         building.latitude = [dict objectForKey:kLatitudeKey];
         building.longitude = [dict objectForKey:kLongtitudeKey];
+        building.info = @"";
         
         NSString *imageName = [dict objectForKey:kImageKey];
         if (imageName.length > 0) {
