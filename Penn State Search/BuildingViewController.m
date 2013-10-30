@@ -11,6 +11,7 @@
 #import "BuildingTextViewController.h"
 #import "MyDataManager.h"
 #import "DataSource.h"
+#import "DataManager.h"
 #import "Building.h"
 #import "Constants.h"
 
@@ -42,6 +43,7 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
     [super viewDidLoad];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
+    self.dataSource.tableView = self.tableView;
     
     self.settingsButton.title = @"\u2699";
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
@@ -107,14 +109,15 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"BuildingImageSegue"]) {
-        BuildingImageViewController *imageViewController = segue.destinationViewController;
-        Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
-        imageViewController.building = building;
-    } else if ([segue.identifier isEqualToString:@"BuildingTextSegue"]) {
+    if ([segue.identifier isEqualToString:@"BuildingTextSegue"]) {
         BuildingTextViewController *infoViewController = segue.destinationViewController;
-        Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        __block Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
         infoViewController.building = building;
+        infoViewController.completionBlock = ^(id obj) {
+            NSString *newBuildingInfo = obj;
+            building.info = newBuildingInfo;
+            [[DataManager sharedInstance] saveContext];
+        };
     }
 }
 

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Building.h"
 
-@interface BuildingTextViewController : UIViewController
+@interface BuildingTextViewController : UIViewController <UITextViewDelegate>
 @property (strong, nonatomic) Building *building;
+@property (copy, nonatomic) CompletionBlock completionBlock;
 
 @end

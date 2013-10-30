@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.infoTextView.delegate = self;
     self.title = self.building.name;
     self.infoTextView.text = self.building.info;
     self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.navigationItem.rightBarButtonItem];
@@ -40,14 +41,42 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    if (!self.editing) {
+        [self.infoTextView resignFirstResponder];
+    } else {
+        [self.infoTextView becomeFirstResponder];
+    }
+}
+
 #pragma mark - Notification Handlers
 
 - (void)keyboardWasShown:(NSNotification *)notification {
-    
+    NSDictionary *info = notification.userInfo;
+    CGRect frame = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGSize keyboardSize = frame.size;
+    self.infoTextView.frame = CGRectMake(0.0, 0.0, keyboardSize.width, keyboardSize.height);
 }
 
 - (void)keyboardWillBeHidden:(NSNotification *)notification {
-    
+    self.infoTextView.frame = CGRectMake(0.0, 0.0, self.infoTextView.bounds.size.width, self.view.bounds.size.height);
+}
+
+#pragma mark - TextView Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if (!self.editing) {
+        [self setEditing:YES animated:YES];
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.completionBlock(self.infoTextView.text);
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    return YES;
 }
 
 #pragma mark - Segues
