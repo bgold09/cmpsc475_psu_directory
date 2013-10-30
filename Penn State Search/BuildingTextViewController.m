@@ -31,7 +31,12 @@
     self.infoTextView.delegate = self;
     self.title = self.building.name;
     self.infoTextView.text = self.building.info;
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.navigationItem.rightBarButtonItem];
+    
+    if (self.building.image) {
+        self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.navigationItem.rightBarButtonItem];
+    } else {
+        self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
