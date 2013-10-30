@@ -15,8 +15,7 @@
 #import "Building.h"
 #import "Constants.h"
 
-static NSString * const CellIndentifierWithImage = @"CellWithImage";
-static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
+static NSString * const CellIdentifier = @"Cell";
 
 @interface BuildingViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -81,14 +80,8 @@ static NSString * const CellIdentifierWithoutImage = @"CellWithoutImage";
 
 #pragma mark - Data Source Cell Configurer
 
-- (NSString *)cellIdentifierForObject:(id)object {
-    Building *building = object;
-    
-    if (building.image) {
-        return CellIndentifierWithImage;
-    }
-    
-    return CellIdentifierWithoutImage;
+- (NSString *)cellIdentifierForObject:(id)object {   
+    return CellIdentifier;
 }
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(id)object {
