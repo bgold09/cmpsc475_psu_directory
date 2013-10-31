@@ -22,6 +22,7 @@ static NSString * const CellIdentifier = @"Cell";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) DataSource *dataSource;
+@property (strong, nonatomic) NSString *searchString;
 
 @end
 
@@ -50,6 +51,9 @@ static NSString * const CellIdentifier = @"Cell";
     [self.settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
     
     self.navigationItem.rightBarButtonItems = @[self.settingsButton, self.editButtonItem];
+    
+    self.searchDisplayController.searchResultsDataSource = self.dataSource;
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadBuildingData:)
@@ -114,6 +118,27 @@ static NSString * const CellIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"BuildingTextSegue" sender:self];
+}
+
+#pragma mark - Search Display Controller Delegate
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    self.searchString = searchString;
+    [self filterSearch];
+    return YES;
+}
+
+- (void)filterSearch {
+    NSString *searchPredicate;
+    
+    if (self.searchString.length > 0) {
+        searchPredicate = [NSString stringWithFormat:@"any name contains[c] '%@'", self.searchString];
+    } else {
+        searchPredicate = @"name like ''";
+    }
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:searchPredicate];
+    [self.dataSource updateWithPredicate:predicate];
 }
 
 #pragma mark - Segues
