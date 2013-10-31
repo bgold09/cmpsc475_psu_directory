@@ -43,7 +43,6 @@ static NSString * const CellIdentifier = @"Cell";
     [super viewDidLoad];
     self.tableView.dataSource = self.dataSource;
     self.dataSource.tableView = self.tableView;
-    self.tableView.delegate = self;
     
     self.settingsButton.title = @"\u2699";
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];

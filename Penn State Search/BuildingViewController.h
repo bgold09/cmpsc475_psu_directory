@@ -10,6 +10,6 @@
 #import "DataSourceCellConfigurer.h"
 #import "AddBuildingViewController.h"
 
-@interface BuildingViewController : UIViewController <DataSourceCellConfigurer, UITableViewDelegate>
+@interface BuildingViewController : UIViewController <DataSourceCellConfigurer>
 
 @end
