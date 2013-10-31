@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataSourceCellConfigurer.h"
+#import "AddBuildingViewController.h"
 
 @interface BuildingViewController : UIViewController <DataSourceCellConfigurer, UITableViewDelegate>
 

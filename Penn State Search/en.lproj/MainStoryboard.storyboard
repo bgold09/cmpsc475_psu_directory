@@ -191,6 +191,9 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="FZ5-QZ-oAu" id="w4k-mF-Spr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -202,6 +205,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="pnx-kT-VJz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="hsb-p6-gOF">
+                            <connections>
+                                <segue destination="Ukj-xq-4eZ" kind="modal" identifier="AddBuildingSegue" id="aaX-Am-fYr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Q72-u6-XJH">
                             <connections>
                                 <segue destination="Lg8-7J-lEb" kind="modal" identifier="PreferencesSegue" modalTransitionStyle="coverVertical" id="Wxc-zO-i5n"/>
@@ -287,6 +295,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1m-ix-7Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-648" y="334"/>
+        </scene>
+        <!--Add Building View Controller-->
+        <scene sceneID="EWm-g3-w4M">
+            <objects>
+                <viewController id="Ukj-xq-4eZ" customClass="AddBuildingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y8Y-In-gnK">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZy-ji-7Qt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="CDU-sZ-6Fa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add New Building" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqg-Mm-MsS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="o7S-EE-riv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Building Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOn-VN-nb1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grj-bw-pp2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="4Wv-hf-lTd"/>
+                                    <constraint firstAttribute="height" constant="44" id="HLT-sw-TmR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="okPressed:" destination="Ukj-xq-4eZ" eventType="touchUpInside" id="O6W-mg-sca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fg-9a-tY0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="4d3-9n-x0c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="Ukj-xq-4eZ" eventType="touchUpInside" id="5Z0-EB-rKj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WOn-VN-nb1" firstAttribute="top" secondItem="Y8Y-In-gnK" secondAttribute="top" constant="121" id="2VI-0b-KGG"/>
+                            <constraint firstItem="8Fg-9a-tY0" firstAttribute="top" secondItem="grj-bw-pp2" secondAttribute="top" type="default" id="4VT-1t-avd"/>
+                            <constraint firstItem="JZy-ji-7Qt" firstAttribute="top" secondItem="Y8Y-In-gnK" secondAttribute="top" constant="165" id="8At-T5-u5O"/>
+                            <constraint firstItem="dqg-Mm-MsS" firstAttribute="leading" secondItem="Y8Y-In-gnK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BQM-dv-2qp"/>
+                            <constraint firstItem="grj-bw-pp2" firstAttribute="leading" secondItem="JZy-ji-7Qt" secondAttribute="leading" type="default" id="Nlm-G0-Dqh"/>
+                            <constraint firstAttribute="bottom" secondItem="grj-bw-pp2" secondAttribute="bottom" constant="176" id="Qh0-Gh-HBF"/>
+                            <constraint firstItem="JZy-ji-7Qt" firstAttribute="centerX" secondItem="WOn-VN-nb1" secondAttribute="centerX" type="default" id="TQo-Na-nzP"/>
+                            <constraint firstAttribute="trailing" secondItem="dqg-Mm-MsS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Y2D-Bw-gRT"/>
+                            <constraint firstItem="8Fg-9a-tY0" firstAttribute="trailing" secondItem="JZy-ji-7Qt" secondAttribute="trailing" type="default" id="ZGv-Jt-1eM"/>
+                            <constraint firstItem="8Fg-9a-tY0" firstAttribute="bottom" secondItem="grj-bw-pp2" secondAttribute="bottom" type="default" id="aFQ-EY-zH5"/>
+                            <constraint firstItem="dqg-Mm-MsS" firstAttribute="top" secondItem="Y8Y-In-gnK" secondAttribute="top" constant="20" symbolic="YES" type="default" id="b4m-uq-btv"/>
+                            <constraint firstItem="dqg-Mm-MsS" firstAttribute="centerX" secondItem="WOn-VN-nb1" secondAttribute="centerX" type="default" id="qtr-ao-GPd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="JZy-ji-7Qt" id="fOG-l3-seA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5M-G5-rOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95" y="334"/>
         </scene>
         <!--Building Text View Controller-->
         <scene sceneID="x4r-kl-wFP">
@@ -391,13 +485,13 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="158" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="159"/>
+                                        <rect key="frame" x="0.0" y="179" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="31" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -489,6 +583,14 @@
         <image name="07-map-marker.png" width="16" height="26"/>
     </resources>
     <classes>
+        <class className="AddBuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddBuildingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="okPressed:"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="BuildingImageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingImageViewController.h"/>
             <relationships>

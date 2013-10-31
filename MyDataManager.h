@@ -10,5 +10,6 @@
 #import "DataManagerDelegate.h"
 
 @interface MyDataManager : NSObject <DataManagerDelegate>
+- (void)addBuildingWithName:(NSString *)name;
 
 @end

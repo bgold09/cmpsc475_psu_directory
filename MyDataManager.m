@@ -51,4 +51,14 @@ static NSString * const kLongtitudeKey = @"longitude";
     [dataManager saveContext];
 }
 
+- (void)addBuildingWithName:(NSString *)name {
+    DataManager *dataManager = [DataManager sharedInstance];
+    NSManagedObjectContext *managedObjectContext = dataManager.managedObjectContext;
+    
+    Building *building = [NSEntityDescription insertNewObjectForEntityForName:@"Building" inManagedObjectContext:managedObjectContext];
+    building.name = name;
+    
+    [dataManager saveContext];
+}
+
 @end

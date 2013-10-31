@@ -9,6 +9,7 @@
 #import "BuildingViewController.h"
 #import "BuildingImageViewController.h"
 #import "BuildingTextViewController.h"
+#import "AddBuildingViewController.h"
 #import "MyDataManager.h"
 #import "DataSource.h"
 #import "DataManager.h"
@@ -31,7 +32,6 @@ static NSString * const CellIdentifier = @"Cell";
     if (self) {        
         MyDataManager *myDataManager = [[MyDataManager alloc] init];
         _dataSource = [[DataSource alloc] initForEntity:@"Building" sortKeys:@[@"name"] predicate:nil sectionNameKeyPath:@"firstLetterOfName" dataManagerDelegate:myDataManager];
-        
         _dataSource.delegate = self;
     }
     return self;
@@ -41,13 +41,15 @@ static NSString * const CellIdentifier = @"Cell";
 {
     [super viewDidLoad];
     self.tableView.dataSource = self.dataSource;
-    self.tableView.delegate = self;
     self.dataSource.tableView = self.tableView;
+    self.tableView.delegate = self;
     
     self.settingsButton.title = @"\u2699";
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:f1, UITextAttributeFont, nil];
     [self.settingsButton setTitleTextAttributes:dict forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItems = @[self.settingsButton, self.editButtonItem];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadBuildingData:)
@@ -90,7 +92,22 @@ static NSString * const CellIdentifier = @"Cell";
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    return YES;
+}
+
+#pragma mark - Editing
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
+}
+
+#pragma mark - Table View DataSource
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 #pragma mark - Table View Delegate
@@ -110,6 +127,16 @@ static NSString * const CellIdentifier = @"Cell";
             NSString *newBuildingInfo = obj;
             building.info = newBuildingInfo;
             [[DataManager sharedInstance] saveContext];
+        };
+    } else if ([segue.identifier isEqualToString:@"AddBuildingSegue"]) {
+        AddBuildingViewController *addBuildingViewController = segue.destinationViewController;
+        addBuildingViewController.completionBlock = ^(id obj) {
+            NSString *newBuildingName = obj;
+            if (newBuildingName) {
+                MyDataManager *myDataManager = [[MyDataManager alloc] init];
+                [myDataManager addBuildingWithName:newBuildingName];
+                [self reloadBuildingData:nil];
+            }
         };
     }
 }

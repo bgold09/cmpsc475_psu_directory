@@ -27,6 +27,7 @@
 		C872981817FBCF9500F8F43A /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C872981717FBCF9500F8F43A /* ResultsViewController.m */; };
 		C89690C1180CB2F7008952FD /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C0180CB2F7008952FD /* PreferencesViewController.m */; };
 		C89690C4180CB4CD008952FD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C89690C3180CB4CD008952FD /* Constants.m */; };
+		C89A47B11821D4DF003E084D /* AddBuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A47B01821D4DF003E084D /* AddBuildingViewController.m */; };
 		C8B7172C181F33DA00814A60 /* BuildingTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B7172B181F33DA00814A60 /* BuildingTextViewController.m */; };
 		C8C0E1D91815E284007052E7 /* Buildings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E1D71815E284007052E7 /* Buildings.xcdatamodeld */; };
 		C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C0E1DA1815E313007052E7 /* CoreData.framework */; };
@@ -118,6 +119,8 @@
 		C89690C0180CB2F7008952FD /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		C89690C2180CB4CD008952FD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C89690C3180CB4CD008952FD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		C89A47AF1821D4DF003E084D /* AddBuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBuildingViewController.h; sourceTree = "<group>"; };
+		C89A47B01821D4DF003E084D /* AddBuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBuildingViewController.m; sourceTree = "<group>"; };
 		C8B7172A181F33DA00814A60 /* BuildingTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingTextViewController.h; sourceTree = "<group>"; };
 		C8B7172B181F33DA00814A60 /* BuildingTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingTextViewController.m; sourceTree = "<group>"; };
 		C8C0E1D81815E284007052E7 /* Buildings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Buildings.xcdatamodel; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				C872981717FBCF9500F8F43A /* ResultsViewController.m */,
 				C87297F717FBBD0F00F8F43A /* SearchViewController.h */,
 				C87297F817FBBD0F00F8F43A /* SearchViewController.m */,
+				C89A47AF1821D4DF003E084D /* AddBuildingViewController.h */,
+				C89A47B01821D4DF003E084D /* AddBuildingViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				C8C0E1E71815E4F7007052E7 /* Building.m in Sources */,
 				C8C0E1EC1815F263007052E7 /* Building+Name.m in Sources */,
 				C8B7172C181F33DA00814A60 /* BuildingTextViewController.m in Sources */,
+				C89A47B11821D4DF003E084D /* AddBuildingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
