@@ -140,12 +140,26 @@ static NSString * const CellIdentifier = @"Cell";
     [self.dataSource updateWithPredicate:predicate];
 }
 
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller {
+    self.dataSource.tableView = controller.searchResultsTableView;
+}
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller {
+    self.dataSource.tableView = self.tableView;
+}
+
+#pragma mark - Search Bar Delegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.dataSource updateWithPredicate:nil];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BuildingTextSegue"]) {
         BuildingTextViewController *infoViewController = segue.destinationViewController;
-        __block Building *building = [self.dataSource objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        __block Building *building = [self.dataSource objectAtIndexPath:self.dataSource.tableView.indexPathForSelectedRow];
         infoViewController.building = building;
         infoViewController.completionBlock = ^(id obj) {
             NSString *newBuildingInfo = obj;
