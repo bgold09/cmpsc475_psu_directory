@@ -73,14 +73,17 @@ static NSString * const CellIdentifier = @"Cell";
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSNumber *showAllBuildings = [preferences objectForKey:kShowAllBuildings];
     
-    if (![showAllBuildings boolValue]) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
-        [self.dataSource updateWithPredicate:predicate];
-    } else {
-        [self.dataSource updateWithPredicate:nil];
+    // not searching
+    if (self.dataSource.tableView == self.tableView) {
+        if (![showAllBuildings boolValue]) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image <> nil"];
+            [self.dataSource updateWithPredicate:predicate];
+        } else {
+            [self.dataSource updateWithPredicate:nil];
+        }
     }
     
-    [self.tableView reloadData];
+    [self.dataSource.tableView reloadData];
 }
 
 #pragma mark - Data Source Cell Configurer
@@ -131,7 +134,7 @@ static NSString * const CellIdentifier = @"Cell";
     NSString *searchPredicate;
     
     if (self.searchString.length > 0) {
-        searchPredicate = [NSString stringWithFormat:@"any name contains[c] '%@'", self.searchString];
+        searchPredicate = [NSString stringWithFormat:@"name contains[c] '%@'", self.searchString];
     } else {
         searchPredicate = @"name like ''";
     }
