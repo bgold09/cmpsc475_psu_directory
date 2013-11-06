@@ -229,6 +229,7 @@
                         <outlet property="settingsButton" destination="Q72-u6-XJH" id="eRl-OO-szx"/>
                         <outlet property="tableView" destination="UVJ-Pq-dAP" id="Rnr-DL-xe9"/>
                         <segue destination="LGC-BA-PSb" kind="push" identifier="BuildingTextSegue" id="tKu-sZ-SFy"/>
+                        <segue destination="chd-FY-3pV" kind="push" identifier="BuildingMapSegue" id="vAb-MB-lOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ks8-Db-olH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,6 +401,33 @@
             </objects>
             <point key="canvasLocation" x="-95" y="334"/>
         </scene>
+        <!--Building Map View Controller-->
+        <scene sceneID="vJp-RS-9de">
+            <objects>
+                <viewController id="chd-FY-3pV" customClass="BuildingMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gpd-7z-Fcc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ozN-uq-KM6"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ozN-uq-KM6" firstAttribute="trailing" secondItem="Gpd-7z-Fcc" secondAttribute="trailing" type="default" id="G5q-gH-FPt"/>
+                            <constraint firstItem="ozN-uq-KM6" firstAttribute="top" secondItem="Gpd-7z-Fcc" secondAttribute="top" type="default" id="J2N-jW-hia"/>
+                            <constraint firstItem="ozN-uq-KM6" firstAttribute="leading" secondItem="Gpd-7z-Fcc" secondAttribute="leading" type="default" id="Wss-z9-kHg"/>
+                            <constraint firstItem="ozN-uq-KM6" firstAttribute="bottom" secondItem="Gpd-7z-Fcc" secondAttribute="bottom" type="default" id="vgR-f4-qva"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eU8-dd-JYa"/>
+                    <connections>
+                        <outlet property="mapView" destination="ozN-uq-KM6" id="fKr-Os-jfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWP-3a-zTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407" y="334"/>
+        </scene>
         <!--Building Text View Controller-->
         <scene sceneID="x4r-kl-wFP">
             <objects>
@@ -503,13 +531,13 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostalAddressCell" textLabel="r8G-At-hJf" rowHeight="158" style="IBUITableViewCellStyleDefault" id="6l4-bF-fSN">
-                                        <rect key="frame" x="0.0" y="179" width="320" height="159"/>
+                                        <rect key="frame" x="0.0" y="179" width="320" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="31" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-At-hJf">
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -600,6 +628,74 @@
         <image name="06-magnify.png" width="24" height="24"/>
         <image name="07-map-marker.png" width="16" height="26"/>
     </resources>
+    <classes>
+        <class className="AddBuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddBuildingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="okPressed:"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BuildingImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="BuildingMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="BuildingTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingTextViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="BuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PreferencesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissPressed:"/>
+                <relationship kind="outlet" name="showImagesSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="zoomSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="ResultDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchPressed:"/>
+                <relationship kind="outlet" name="accessIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

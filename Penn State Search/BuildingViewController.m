@@ -10,6 +10,7 @@
 #import "BuildingImageViewController.h"
 #import "BuildingTextViewController.h"
 #import "AddBuildingViewController.h"
+#import "BuildingMapViewController.h"
 #import "MyDataManager.h"
 #import "DataSource.h"
 #import "DataManager.h"
@@ -23,6 +24,7 @@ static NSString * const CellIdentifier = @"Cell";
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) DataSource *dataSource;
 @property (strong, nonatomic) NSString *searchString;
+@property (strong, nonatomic) NSIndexPath *indexPathForTappedAccessory;
 
 @end
 
@@ -43,6 +45,7 @@ static NSString * const CellIdentifier = @"Cell";
     [super viewDidLoad];
     self.tableView.dataSource = self.dataSource;
     self.dataSource.tableView = self.tableView;
+    self.tableView.delegate = self;
     
     self.settingsButton.title = @"\u2699";
     UIFont *f1 = [UIFont fontWithName:@"Helvetica" size:24.0];
@@ -128,6 +131,11 @@ static NSString * const CellIdentifier = @"Cell";
     [self performSegueWithIdentifier:@"BuildingTextSegue" sender:self];
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    self.indexPathForTappedAccessory = indexPath;
+    [self performSegueWithIdentifier:@"BuildingMapSegue" sender:self];
+}
+
 #pragma mark - Search Display Controller Delegate
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -185,6 +193,9 @@ static NSString * const CellIdentifier = @"Cell";
                 [self reloadBuildingData:nil];
             }
         };
+    } else if ([segue.identifier isEqualToString:@"BuildingMapSegue"]) {
+        BuildingMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.building = [self.dataSource objectAtIndexPath:self.indexPathForTappedAccessory];
     }
 }
 

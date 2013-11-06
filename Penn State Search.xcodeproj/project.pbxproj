@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80E3BFC182B00890059B4C3 /* BuildingMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80E3BFB182B00890059B4C3 /* BuildingMapViewController.m */; };
+		C80E3BFE182B02CD0059B4C3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80E3BFD182B02CC0059B4C3 /* MapKit.framework */; };
+		C80E3C00182B043E0059B4C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80E3BFF182B043E0059B4C3 /* CoreLocation.framework */; };
+		C80E3C02182B04AF0059B4C3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80E3C01182B04AF0059B4C3 /* AddressBook.framework */; };
 		C84EDC6418038CFD00ABE978 /* ResultDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */; };
 		C857B6C01817163E000BAC8F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C857B6BF1817163E000BAC8F /* Settings.bundle */; };
 		C87297DD17FBBD0F00F8F43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87297DC17FBBD0F00F8F43A /* UIKit.framework */; };
@@ -80,6 +84,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80E3BFA182B00890059B4C3 /* BuildingMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingMapViewController.h; sourceTree = "<group>"; };
+		C80E3BFB182B00890059B4C3 /* BuildingMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingMapViewController.m; sourceTree = "<group>"; };
+		C80E3BFD182B02CC0059B4C3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C80E3BFF182B043E0059B4C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C80E3C01182B04AF0059B4C3 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		C84EDC6218038CFD00ABE978 /* ResultDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDetailViewController.h; sourceTree = "<group>"; };
 		C84EDC6318038CFD00ABE978 /* ResultDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDetailViewController.m; sourceTree = "<group>"; };
 		C857B6BF1817163E000BAC8F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -188,6 +197,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80E3C02182B04AF0059B4C3 /* AddressBook.framework in Frameworks */,
+				C80E3C00182B043E0059B4C3 /* CoreLocation.framework in Frameworks */,
+				C80E3BFE182B02CD0059B4C3 /* MapKit.framework in Frameworks */,
 				C8C0E1DB1815E313007052E7 /* CoreData.framework in Frameworks */,
 				C87297DD17FBBD0F00F8F43A /* UIKit.framework in Frameworks */,
 				C87297DF17FBBD0F00F8F43A /* Foundation.framework in Frameworks */,
@@ -227,10 +239,13 @@
 		C87297DB17FBBD0F00F8F43A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C80E3C01182B04AF0059B4C3 /* AddressBook.framework */,
 				C8C0E1DA1815E313007052E7 /* CoreData.framework */,
-				C87297DC17FBBD0F00F8F43A /* UIKit.framework */,
-				C87297DE17FBBD0F00F8F43A /* Foundation.framework */,
 				C87297E017FBBD0F00F8F43A /* CoreGraphics.framework */,
+				C80E3BFF182B043E0059B4C3 /* CoreLocation.framework */,
+				C87297DE17FBBD0F00F8F43A /* Foundation.framework */,
+				C80E3BFD182B02CC0059B4C3 /* MapKit.framework */,
+				C87297DC17FBBD0F00F8F43A /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -348,6 +363,8 @@
 				C87297F817FBBD0F00F8F43A /* SearchViewController.m */,
 				C89A47AF1821D4DF003E084D /* AddBuildingViewController.h */,
 				C89A47B01821D4DF003E084D /* AddBuildingViewController.m */,
+				C80E3BFA182B00890059B4C3 /* BuildingMapViewController.h */,
+				C80E3BFB182B00890059B4C3 /* BuildingMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -521,6 +538,7 @@
 				C8C0E1EC1815F263007052E7 /* Building+Name.m in Sources */,
 				C8B7172C181F33DA00814A60 /* BuildingTextViewController.m in Sources */,
 				C89A47B11821D4DF003E084D /* AddBuildingViewController.m in Sources */,
+				C80E3BFC182B00890059B4C3 /* BuildingMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
