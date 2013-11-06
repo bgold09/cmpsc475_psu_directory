@@ -95,7 +95,12 @@ static NSString * const CellIdentifier = @"Cell";
 - (void)configureCell:(UITableViewCell *)cell withObject:(id)object {
     Building *building = object;
     cell.textLabel.text = building.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if ([building.latitude floatValue] != 0.0 && [building.longitude floatValue] != 0.0) {
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
