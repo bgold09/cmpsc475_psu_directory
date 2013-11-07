@@ -9,6 +9,7 @@
 #import "BuildingMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
+#import "BuildingImageViewController.h"
 
 #define kMapZoomDistance 400.0
 
@@ -72,6 +73,19 @@
     annoView.canShowCallout = YES;
 
     return annoView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    [self performSegueWithIdentifier:@"MapToImageSegue" sender:self];
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"MapToImageSegue"]) {
+        BuildingImageViewController *imageViewController = segue.destinationViewController;
+        imageViewController.building = self.building;
+    }
 }
 
 @end
