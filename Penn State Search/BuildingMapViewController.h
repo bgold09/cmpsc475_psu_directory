@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Building.h"
 
-@interface BuildingMapViewController : UIViewController
+@interface BuildingMapViewController : UIViewController <MKMapViewDelegate>
 @property (strong, nonatomic) Building *building;
 
 @end
