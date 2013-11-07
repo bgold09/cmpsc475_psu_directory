@@ -567,11 +567,11 @@
             </objects>
             <point key="canvasLocation" x="635" y="-1115"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Directory-->
         <scene sceneID="Bfn-mg-j4Y">
             <objects>
                 <navigationController id="UXu-9D-pvy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="06-magnify.png" id="76y-l8-wJJ"/>
+                    <tabBarItem key="tabBarItem" title="Directory" image="06-magnify.png" id="76y-l8-wJJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TyA-XI-Ic8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -605,11 +605,11 @@
             </objects>
             <point key="canvasLocation" x="-1844" y="-713"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Buildings-->
         <scene sceneID="avC-aZ-hA0">
             <objects>
                 <navigationController id="lJk-i8-KfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="07-map-marker.png" id="LHI-nn-dve"/>
+                    <tabBarItem key="tabBarItem" title="Buildings" image="07-map-marker.png" id="LHI-nn-dve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="njv-yB-U7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
