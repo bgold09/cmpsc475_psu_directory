@@ -11,7 +11,8 @@
 #import <AddressBook/AddressBook.h>
 #import "BuildingImageViewController.h"
 
-#define kMapZoomDistance 400.0
+#define kMapZoomDistance           400.0
+#define kDisclosureButtonDimension 23
 
 @interface BuildingMapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -65,7 +66,7 @@
     
     if (self.building.image) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        button.frame = CGRectMake(0, 0, 23, 23);
+        button.frame = CGRectMake(0, 0, kDisclosureButtonDimension, kDisclosureButtonDimension);
         annoView.rightCalloutAccessoryView = button;
     }
 
