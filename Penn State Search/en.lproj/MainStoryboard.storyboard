@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646" y="-1115"/>
+            <point key="canvasLocation" x="-554" y="-1115"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="Lii-SO-gyX">
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9R-iM-n6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="-1115"/>
+            <point key="canvasLocation" x="29" y="-1115"/>
         </scene>
         <!--Building View Controller - Search-->
         <scene sceneID="uac-rp-B92">
@@ -243,7 +243,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-646" y="-380"/>
+            <point key="canvasLocation" x="-554" y="-380"/>
         </scene>
         <!--Preferences View Controller - Settings-->
         <scene sceneID="sSu-BI-N4w">
@@ -313,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1m-ix-7Xz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-648" y="334"/>
+            <point key="canvasLocation" x="-556" y="334"/>
         </scene>
         <!--Add Building View Controller-->
         <scene sceneID="EWm-g3-w4M">
@@ -399,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5M-G5-rOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="334"/>
+            <point key="canvasLocation" x="29" y="1062"/>
         </scene>
         <!--Building Map View Controller-->
         <scene sceneID="vJp-RS-9de">
@@ -427,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWP-3a-zTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="334"/>
+            <point key="canvasLocation" x="29" y="334"/>
         </scene>
         <!--Building Text View Controller-->
         <scene sceneID="x4r-kl-wFP">
@@ -464,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxM-mo-rbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="-380"/>
+            <point key="canvasLocation" x="29" y="-380"/>
         </scene>
         <!--Building Image View Controller-->
         <scene sceneID="aky-Vq-ZB4">
@@ -491,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ot8-Qz-Ha3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-380"/>
+            <point key="canvasLocation" x="635" y="-380"/>
         </scene>
         <!--Result Detail View Controller-->
         <scene sceneID="dAz-kP-It7">
@@ -565,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TT0-fL-0Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-1115"/>
+            <point key="canvasLocation" x="635" y="-1115"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="Bfn-mg-j4Y">
@@ -629,6 +629,74 @@
         <image name="06-magnify.png" width="24" height="24"/>
         <image name="07-map-marker.png" width="16" height="26"/>
     </resources>
+    <classes>
+        <class className="AddBuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddBuildingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="okPressed:"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BuildingImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="BuildingMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="BuildingTextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingTextViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="BuildingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PreferencesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissPressed:"/>
+                <relationship kind="outlet" name="showImagesSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="zoomSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="ResultDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchPressed:"/>
+                <relationship kind="outlet" name="accessIdField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
